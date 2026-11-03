@@ -1,0 +1,13 @@
+{
+  "name": "Neşe Alkaya",
+  "language": "tr-TR",
+  "url": "https://nese-alkaya.pages.dev",
+  "description": "Yaşam koçluğu ve manevi rehberlik",
+  "sections": [
+    "/hakkimda/",
+    "/hizmetler/",
+    "/icerikler/",
+    "/iletisim/"
+  ],
+  "disclaimer": "Geleneksel ve sezgisel yorumlar tıbbi, hukuki veya finansal danışmanlık değildir."
+}

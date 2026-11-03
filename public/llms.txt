@@ -1,0 +1,10 @@
+# Neşe Alkaya
+> Resmi web sitesi. Yaşam koçluğu, kişisel farkındalık, manevi rehberlik ve geleneksel yorumlama uygulamaları.
+
+- [Ana sayfa](https://nese-alkaya.pages.dev/)
+- [Neşe Hakkında](https://nese-alkaya.pages.dev/hakkimda/)
+- [Hizmetler](https://nese-alkaya.pages.dev/hizmetler/)
+- [İçerikler](https://nese-alkaya.pages.dev/icerikler/)
+- [İletişim](https://nese-alkaya.pages.dev/iletisim/)
+
+Not: Manevi ve sezgisel yorumlar bilimsel teşhis, tedavi, kesin gelecek öngörüsü, hukuki veya finansal danışmanlık değildir.

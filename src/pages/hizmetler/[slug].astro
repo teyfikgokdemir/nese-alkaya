@@ -1,0 +1,12 @@
+---
+import Base from '../../layouts/Base.astro';
+import {services,site,coaching} from '../../data/content.js';
+export function getStaticPaths(){return services.map(service=>({params:{slug:service.slug},props:{service}}));}
+const {service}=Astro.props;
+const category=coaching.some(s=>s.slug===service.slug)?'Yaşam Koçluğu':'Manevi Rehberlik';
+const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent('Merhaba Neşe Hanım, '+service.title+' görüşmesi hakkında bilgi almak istiyorum.');
+---
+<Base title={service.title} description={service.short} crumbs={[{name:'Ana Sayfa',href:'/'},{name:'Hizmetler',href:'/hizmetler/'},{name:service.title,href:Astro.url.pathname}]}>
+<section class="page-hero"><div class="shell"><span class="eyebrow">{category} / {service.title}</span><h1>{service.title}</h1><p class="lead">{service.short}</p></div></section>
+<section class="section" style="padding-top:0"><div class="shell detail-grid"><article class="prose"><span class="eyebrow">Görüşme yaklaşımı</span><h2 class="section-title">Kendinize ayırdığınız bir alan.</h2><p>{service.description}</p><p>Görüşmenin biçimi, süresi ve ücret bilgisi öncesinde doğrudan iletişim kurularak netleştirilir. Kişisel beklentilerinizi ve sınırlarınızı paylaşabilirsiniz.</p><div class="note">Bilgilendirme: Bu hizmet sağlık, psikoterapi, teşhis, tedavi, hukuki ya da finansal danışmanlığın yerine geçmez. Sezgisel veya geleneksel yorumlamalar kesin sonuç garantisi sunmaz.</div><a class="btn" href={wa} target="_blank" rel="noopener noreferrer">Bu Hizmet İçin Bilgi Al ↗</a></article><aside class="info-panel"><h3>Görüşmede ele alınabilecek konular</h3><ul>{service.topics.map(t=><li>{t}</li>)}</ul><a href="/hizmetler/" class="card-link">← Tüm hizmetler</a></aside></div></section>
+</Base>

@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import {coaching,spiritual} from '../../data/content.js';
+---
+<Base title="Hizmetler" description="Neşe Alkaya yaşam koçluğu, farkındalık, duru görü, rüya yorumlama, tuz bakımı, yıldızname ve diğer manevi rehberlik hizmetleri.">
+<section class="page-hero"><div class="shell"><span class="eyebrow">Hizmetler</span><h1>Size uygun bir başlangıç.</h1><p class="lead">Her yolculuğun ihtiyacı farklıdır. Yaşam koçluğu ve manevi rehberlik alanlarını ayrı başlıklar altında inceleyebilirsiniz.</p></div></section>
+<section class="section" style="padding-top:0"><div class="shell"><span class="eyebrow">Yaşam Koçluğu</span><h2 class="section-title">Kendinizi ve kararlarınızı anlamak.</h2><div class="card-grid">{coaching.map(s=><a class="service-card" href={'/hizmetler/'+s.slug+'/'}><span class="card-tag">Bireysel görüşme</span><h3>{s.title}</h3><p>{s.short}</p><span class="card-link">İncele ↗</span></a>)}</div></div></section>
+<section class="section dark"><div class="shell"><span class="eyebrow">Manevi Rehberlik</span><h2 class="section-title">Geleneksel ve sezgisel yorumlar.</h2><p class="lead">Manevi uygulamalar kişisel inanç ve yorumlama bağlamında sunulur; kesin gelecek tahmini veya tıbbi sonuç vaadi içermez.</p><div class="card-grid">{spiritual.map(s=><a class="service-card" href={'/hizmetler/'+s.slug+'/'}><span class="card-tag">Manevi görüşme</span><h3>{s.title}</h3><p>{s.short}</p><span class="card-link">İncele ↗</span></a>)}</div></div></section>
+<section class="section"><div class="shell cta-block"><div><span class="eyebrow">Kararsız mısınız?</span><h2>Önce konuşabiliriz.</h2><p>Size uygun görüşme türünü ve koşullarını doğrudan sorabilirsiniz.</p></div><a href="/iletisim/" class="btn">İletişime Geç ↗</a></div></section>
+</Base>

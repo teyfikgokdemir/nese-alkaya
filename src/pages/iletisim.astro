@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import {site} from '../data/content.js';
+const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent('Merhaba Neşe Hanım, web siteniz üzerinden görüşme hakkında bilgi almak istiyorum.');
+---
+<Base title="İletişim & Görüşme" description="Neşe Alkaya ile yaşam koçluğu ve manevi rehberlik görüşmeleri hakkında bilgi almak için WhatsApp, e-posta ve sosyal medya iletişim kanalları.">
+<section class="page-hero"><div class="shell"><span class="eyebrow">İletişim</span><h1>Bir görüşme ile başlayabilirsiniz.</h1><p class="lead">İhtiyacınız olan görüşme türünü, süre ve uygunluk bilgisini birlikte netleştirmek için iletişime geçebilirsiniz.</p></div></section>
+<section class="section" style="padding-top:0"><div class="shell contact-grid"><div class="contact-box"><span class="eyebrow">En kolay yol</span><h2 class="section-title">WhatsApp</h2><p>Görüşme talebinizi ve merak ettiğiniz konuları doğrudan iletin.</p><a class="btn" href={wa} target="_blank" rel="noopener noreferrer">WhatsApp'tan Yazın ↗</a><p><a href={'tel:+'+site.phone}>{site.phoneDisplay}</a></p></div><div class="contact-box"><span class="eyebrow">Diğer kanallar</span><h2 class="section-title">Bize ulaşın.</h2><p>E-posta: <a href={'mailto:'+site.email}>{site.email}</a></p><div class="social-list">{site.socials.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div></div></div><p class="note">Görüşmelerin kapsamı, ücretlendirme ve uygunluk bilgileri iletişim sırasında teyit edilir. Bu web sitesi üzerinden doğrudan ödeme alınmamaktadır.</p></div></section>
+</Base>
