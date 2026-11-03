@@ -30,9 +30,9 @@ export const spiritual = [
 ];
 export const services=[...coaching,...spiritual];
 export const journey=[
- {number:'01',title:'Tanışın',text:'Neşe Alkaya’nın yaklaşımını, değerlerini ve çalışma alanlarını keşfedin.'},
- {number:'02',title:'Konunuzu belirleyin',text:'Yaşam koçluğu veya manevi rehberlik alanlarından size uygun başlığı seçin.'},
- {number:'03',title:'İletişime geçin',text:'Görüşme biçimi, uygunluk ve koşulları doğrudan WhatsApp üzerinden netleştirin.'}
+ {title:'Tanışın',text:'Neşe Alkaya’nın yaklaşımını, değerlerini ve çalışma alanlarını keşfedin.'},
+ {title:'Konunuzu belirleyin',text:'Yaşam koçluğu veya manevi rehberlik alanlarından size uygun başlığı seçin.'},
+ {title:'İletişime geçin',text:'Görüşme biçimi, uygunluk ve koşulları doğrudan WhatsApp üzerinden netleştirin.'}
 ];
 export const topics=[
  {title:'Yolunu yeniden gözlemek',text:'Değişim zamanlarında acele etmeden, kendi ritminizle karar vermek.'},
