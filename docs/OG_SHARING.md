@@ -8,5 +8,5 @@
 
 ## 2026-11-04 Fotoğraf odaklı revizyon
 - İlk kartların metin ağırlığı ve dar/kenardan kesilmiş portre yerleşimi geri bildirim üzerine kaldırıldı.
-- Orijinal portre solda 820/1200 px (yaklaşık %68); üstten hizalanarak yüz görünürlüğü önceliklendirildi. Sağdaki 380 px panelde yalnızca isim ve 3 kısa marka kelimesi var.
+- Orijinal portre solda 820/1200 px (yaklaşık %68); orijinal portreden yüzün tamamını gösterecek özel kadraj alınarak yüz görünürlüğü önceliklendirildi. Sağdaki 380 px panelde yalnızca isim ve 3 kısa marka kelimesi var.
 - Sosyal platformların eski görseli önbellekten göstermemesi için dosya adları yeni: `nese-alkaya-portre-tr.jpg` ve `nese-alkaya-portre-de.jpg`. OG/Twitter meta ve build testleri yeni adrese göre güncellendi.
