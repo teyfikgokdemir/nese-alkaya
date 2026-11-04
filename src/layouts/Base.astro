@@ -2,6 +2,7 @@
 import {site} from '../data/content.js';
 import {dePathMap,trPathMap,deSiteDescription,deServices} from '../data/de.js';
 import '../styles/global.css';
+import SocialLinks from '../components/SocialLinks.astro';
 const {title=site.name,description=site.description,path=Astro.url.pathname,crumbs=[],lang='tr',service=null,faqItems=[]}=Astro.props;
 const isDe=lang==='de';
 const canonical=new URL(path,site.url).href;
@@ -72,7 +73,7 @@ const graph=[
 <div class="footer-grid">
 <div><a href={isDe?'/de/':'/'} class="footer-brand">NEŞE ALKAYA</a><p>{isDe?'Ein ruhiger Raum, um neue Perspektiven auf den eigenen Weg zu gewinnen.':'Bir adım geri çekilip kendi yolunuza daha yakından bakabileceğiniz bir alan.'}</p></div>
 <div><h3>{isDe?'Entdecken':'Keşfedin'}</h3>{nav.slice(1).map(n=><a href={n.href}>{n.title}</a>)}</div>
-<div><h3>{isDe?'Soziale Medien':'Sosyal Medya'}</h3>{site.socials.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div>
+<div><h3>{isDe?'Soziale Medien':'Sosyal Medya'}</h3><SocialLinks label={isDe?'Soziale Medien':'Sosyal medya hesapları'}/></div>
 <div><h3>{isDe?'Kontakt':'İletişim'}</h3><a href={'tel:+'+site.phone}>{site.phoneDisplay}</a><a href={'mailto:'+site.email}>{site.email}</a><a href={wa} target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div>
 </div>
 <div class="footer-bottom"><span>© {new Date().getFullYear()} Neşe Alkaya. {isDe?'Alle Rechte vorbehalten.':'Tüm hakları saklıdır.'}</span><span>{isDe?'Die Gespräche ersetzen keine medizinische, psychotherapeutische, rechtliche oder finanzielle Beratung.':'Görüşmeler tıbbi, psikolojik, hukuki veya finansal danışmanlık yerine geçmez.'}</span></div>
@@ -81,5 +82,11 @@ const graph=[
 const btn=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-nav');
 btn?.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));btn.setAttribute('aria-label',open?(document.documentElement.lang==='de'?'Menü öffnen':'Menüyü aç'):(document.documentElement.lang==='de'?'Menü schließen':'Menüyü kapat'));nav?.classList.toggle('open',!open)});
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');btn?.setAttribute('aria-expanded','false')}));
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const blocks=document.querySelectorAll('.section-heading,.page-hero .shell,.inner-hero .shell,.detail-hero .detail-content-wrap,.editorial-card,.spiritual-card,.service-catalog-item,.topic-columns article,.contact-page-grid,.social-feature-section .editorial-text-grid,.about-feature,.about-lead-grid');
+ const observer=new IntersectionObserver((entries)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-in-view');observer.unobserve(entry.target)}}},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+ blocks.forEach(el=>{el.classList.add('reveal-on-scroll');observer.observe(el)});
+ document.body.classList.add('motion-ready');
+}
 </script>
 </body></html>

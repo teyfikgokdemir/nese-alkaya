@@ -1,7 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
 import {site} from '../data/content.js';
+import SocialLinks from '../components/SocialLinks.astro';
 import {deServices,deCoaching,deSpiritual,deTopics,deSiteDescription} from '../data/de.js';
+import SocialLinks from './SocialLinks.astro';
 const {kind='home',service=null}=Astro.props;
 const wa=(context)=>'https://wa.me/'+site.phone+'?text='+encodeURIComponent('Guten Tag Frau Alkaya, ich interessiere mich für '+context+'. Können Sie mir weitere Informationen geben?');
 const titles={home:'Coaching und spirituelle Begleitung',about:'Über mich',services:'Angebote im Überblick',insights:'Gedanken & Einblicke',contact:'Kontakt & Gespräch'};
@@ -52,11 +54,11 @@ const bc=service?[{name:'Startseite',href:'/de/'},{name:'Angebote',href:'/de/ang
 {kind==='insights'&&<Fragment>
 <section class="page-hero"><div class="shell"><span class="overline">Einblicke</span><h1>Gedanken aus dem Leben.</h1><p class="lead">Fragen zu Beziehungen, Entscheidungen, Achtsamkeit und spirituellen Traditionen.</p></div></section>
 <section class="section section-warm"><div class="shell"><div class="section-heading"><div><span class="overline">Themen</span><h2 class="display-title">Einladung zum Nachdenken.</h2></div><p>Manche Fragen beschäftigen uns immer wieder – in unterschiedlichen Lebensphasen.</p></div><div class="topic-columns">{deTopics.map(t=><article><span class="topic-rule" aria-hidden="true"></span><h3>{t.title}</h3><p>{t.text}</p></article>)}</div></div></section>
-<section class="section"><div class="shell editorial-text-grid"><div><span class="overline">Soziale Medien</span><h2 class="section-title">Videos und neue Gedanken.</h2></div><div class="prose"><p>Aktuelle Beiträge finden Sie direkt auf den offiziellen Kanälen bei Instagram, TikTok und YouTube. Viele Beiträge werden auf Türkisch veröffentlicht.</p><div class="social-list">{site.socials.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div></div></div></section>
+<section class="section social-feature-section"><div class="shell editorial-text-grid"><div><span class="overline">Soziale Medien</span><h2 class="section-title">Videos und neue Gedanken.</h2></div><div class="prose"><p>Aktuelle Beiträge finden Sie direkt auf den offiziellen Kanälen bei Instagram, TikTok und YouTube. Viele Beiträge werden auf Türkisch veröffentlicht.</p><SocialLinks label={'Soziale Medien'}/></div></div></section>
 </Fragment>}
 {kind==='contact'&&<Fragment>
 <section class="page-hero"><div class="shell"><span class="overline">Kontakt</span><h1>Der erste Schritt ist ein Gespräch.</h1><p class="lead">Erzählen Sie mir, was Sie beschäftigt. Verfügbarkeit, Dauer und Ablauf klären wir gemeinsam.</p></div></section>
-<section class="section section-warm"><div class="shell contact-page-grid"><div class="contact-page-primary"><span class="overline">Direkter Kontakt</span><h2>Ich freue mich auf Ihre Nachricht.</h2><p>Schreiben Sie mir über WhatsApp, wenn Sie Fragen zu einem Angebot oder zu einem möglichen Termin haben.</p><a href={wa('einem Termin')} target="_blank" rel="noopener noreferrer" class="button button-gold">WhatsApp öffnen ↗</a></div><div class="contact-page-secondary"><span class="overline">Kontaktmöglichkeiten</span><a href={'tel:+'+site.phone}>{site.phoneDisplay}</a><a href={'mailto:'+site.email}>{site.email}</a><div class="social-list">{site.socials.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div></div></div></section>
+<section class="section section-warm"><div class="shell contact-page-grid"><div class="contact-page-primary"><span class="overline">Direkter Kontakt</span><h2>Ich freue mich auf Ihre Nachricht.</h2><p>Schreiben Sie mir über WhatsApp, wenn Sie Fragen zu einem Angebot oder zu einem möglichen Termin haben.</p><a href={wa('einem Termin')} target="_blank" rel="noopener noreferrer" class="button button-gold">WhatsApp öffnen ↗</a></div><div class="contact-page-secondary"><span class="overline">Kontaktmöglichkeiten</span><a href={'tel:+'+site.phone}>{site.phoneDisplay}</a><a href={'mailto:'+site.email}>{site.email}</a><SocialLinks label={'Soziale Medien'}/></div></div></section>
 </Fragment>}
 {kind==='detail'&&service&&<Fragment>
 <section class="detail-hero"><div class="shell detail-content-wrap"><a href="/de/angebote/" class="backlink">← Alle Angebote</a><span class="overline">{serviceLabel}</span><h1>{service.title}</h1><p class="detail-summary">{service.short}</p><a class="button button-gold" href={wa(service.title)} target="_blank" rel="noopener noreferrer">Informationen anfragen ↗</a></div></section>
