@@ -203,6 +203,96 @@
       "language": "de-DE",
       "url": "https://nesealkaya.com/de/angebote/reiki-und-energiearbeit/",
       "alternate": "https://nesealkaya.com/hizmetler/bioenerji-ve-reiki/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/",
+      "alternate": "https://nesealkaya.com/de/blog/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/",
+      "alternate": "https://nesealkaya.com/blog/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/yasam-koclugu-nedir-ne-degildir/",
+      "alternate": "https://nesealkaya.com/de/blog/was-ist-persoenliches-coaching/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/was-ist-persoenliches-coaching/",
+      "alternate": "https://nesealkaya.com/blog/yasam-koclugu-nedir-ne-degildir/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/karar-verirken-netlik-kazanmak/",
+      "alternate": "https://nesealkaya.com/de/blog/entscheidungen-mit-mehr-klarheit-treffen/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/entscheidungen-mit-mehr-klarheit-treffen/",
+      "alternate": "https://nesealkaya.com/blog/karar-verirken-netlik-kazanmak/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/iliskilerde-sinir-koymak/",
+      "alternate": "https://nesealkaya.com/de/blog/grenzen-setzen-in-beziehungen/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/grenzen-setzen-in-beziehungen/",
+      "alternate": "https://nesealkaya.com/blog/iliskilerde-sinir-koymak/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/gunluk-stres-ve-duygusal-farkindalik/",
+      "alternate": "https://nesealkaya.com/de/blog/alltagsstress-und-emotionale-achtsamkeit/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/alltagsstress-und-emotionale-achtsamkeit/",
+      "alternate": "https://nesealkaya.com/blog/gunluk-stres-ve-duygusal-farkindalik/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/yeni-baslangiclara-hazirlanmak/",
+      "alternate": "https://nesealkaya.com/de/blog/neuanfang-und-veraenderung-gestalten/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/neuanfang-und-veraenderung-gestalten/",
+      "alternate": "https://nesealkaya.com/blog/yeni-baslangiclara-hazirlanmak/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/tek-gorusme-mi-surecli-kocluk-mu/",
+      "alternate": "https://nesealkaya.com/de/blog/einzeltermin-oder-laengere-begleitung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/einzeltermin-oder-laengere-begleitung/",
+      "alternate": "https://nesealkaya.com/blog/tek-gorusme-mi-surecli-kocluk-mu/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/alevi-bektasi-geleneginde-yol-ve-insana-saygi/",
+      "alternate": "https://nesealkaya.com/de/blog/alevitische-tradition-weg-respekt-begleitung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/alevitische-tradition-weg-respekt-begleitung/",
+      "alternate": "https://nesealkaya.com/blog/alevi-bektasi-geleneginde-yol-ve-insana-saygi/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/blog/ruyalar-ve-sembolleri-anlamlandirmak/",
+      "alternate": "https://nesealkaya.com/de/blog/traeume-und-symbole-verstehen/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/blog/traeume-und-symbole-verstehen/",
+      "alternate": "https://nesealkaya.com/blog/ruyalar-ve-sembolleri-anlamlandirmak/"
     }
   ],
   "services": {
@@ -370,5 +460,141 @@
   "disclaimer": {
     "tr": "Koçluk psikoterapi ya da tıbbi tedavi değildir. Manevi yorumlar kesin sonuç garantisi içermez.",
     "de": "Coaching ist keine Psychotherapie. Spirituelle Deutungen sind keine medizinische Behandlung und enthalten keine garantierten Prognosen."
+  },
+  "blog": {
+    "index": {
+      "tr": "https://nesealkaya.com/blog/",
+      "de": "https://nesealkaya.com/de/blog/"
+    },
+    "articles": [
+      {
+        "title": {
+          "tr": "Yaşam koçluğu nedir, ne değildir? Görüşmeye başlamadan önce",
+          "de": "Was ist persönliches Coaching – und wo liegen seine Grenzen?"
+        },
+        "description": {
+          "tr": "Bireysel koçluğun amacı, sınırları ve bir görüşmeye hazırlanırken bilmeniz gerekenler.",
+          "de": "Was in einem Coaching-Gespräch Raum finden kann, wie Sie sich vorbereiten und was Coaching nicht ersetzt."
+        },
+        "category": {
+          "tr": "Yaşam Koçluğu",
+          "de": "Coaching"
+        },
+        "tr": "https://nesealkaya.com/blog/yasam-koclugu-nedir-ne-degildir/",
+        "de": "https://nesealkaya.com/de/blog/was-ist-persoenliches-coaching/"
+      },
+      {
+        "title": {
+          "tr": "Karar verirken netlik kazanmak: Kendi sesinizi duymanın yolları",
+          "de": "Entscheidungen mit mehr Klarheit treffen: Den eigenen Maßstab finden"
+        },
+        "description": {
+          "tr": "Seçenekler arasında sıkıştığınızda önceliklerinizi ve bir sonraki adımı nasıl belirleyebilirsiniz?",
+          "de": "Wie Sie schwierige Optionen sortieren, persönliche Werte einbeziehen und kleine nächste Schritte erkennen."
+        },
+        "category": {
+          "tr": "Karar Netliği",
+          "de": "Orientierung"
+        },
+        "tr": "https://nesealkaya.com/blog/karar-verirken-netlik-kazanmak/",
+        "de": "https://nesealkaya.com/de/blog/entscheidungen-mit-mehr-klarheit-treffen/"
+      },
+      {
+        "title": {
+          "tr": "İlişkilerde sınır koymak: Hayır demek neden sevgisizlik değildir?",
+          "de": "Grenzen setzen in Beziehungen: Ein Nein ist kein Zeichen fehlender Zuneigung"
+        },
+        "description": {
+          "tr": "Suçluluk, açık iletişim ve kişisel alanı korumak üzerine dengeli bir yaklaşım.",
+          "de": "Wie persönliche Bedürfnisse ausgesprochen werden können, ohne Respekt und Nähe aus dem Blick zu verlieren."
+        },
+        "category": {
+          "tr": "İlişkiler",
+          "de": "Beziehungen"
+        },
+        "tr": "https://nesealkaya.com/blog/iliskilerde-sinir-koymak/",
+        "de": "https://nesealkaya.com/de/blog/grenzen-setzen-in-beziehungen/"
+      },
+      {
+        "title": {
+          "tr": "Günlük stres ve duygusal farkındalık: Daha sakin bir ritim mümkün mü?",
+          "de": "Alltagsstress und emotionale Achtsamkeit: Einen eigenen Rhythmus finden"
+        },
+        "description": {
+          "tr": "Yoğunluk karşısında kendi sınırlarınızı, ihtiyaçlarınızı ve destek kaynaklarınızı fark edin.",
+          "de": "Belastungen genauer wahrnehmen, Gefühle benennen und passende Routinen für den Alltag überlegen."
+        },
+        "category": {
+          "tr": "Farkındalık",
+          "de": "Achtsamkeit"
+        },
+        "tr": "https://nesealkaya.com/blog/gunluk-stres-ve-duygusal-farkindalik/",
+        "de": "https://nesealkaya.com/de/blog/alltagsstress-und-emotionale-achtsamkeit/"
+      },
+      {
+        "title": {
+          "tr": "Yeni başlangıçlar: Hayatınızda değişime hazırlanırken nelere bakmalısınız?",
+          "de": "Neuanfang und Veränderung: Mit realistischen Schritten weitergehen"
+        },
+        "description": {
+          "tr": "Değişim dönemlerinde beklentileri düzenlemek, alışkanlıkları gözden geçirmek ve küçük adımlar seçmek.",
+          "de": "Warum neue Lebensphasen kein vollständiges Umkrempeln verlangen und wie kleine Schritte Orientierung geben können."
+        },
+        "category": {
+          "tr": "Kişisel Dönüşüm",
+          "de": "Veränderung"
+        },
+        "tr": "https://nesealkaya.com/blog/yeni-baslangiclara-hazirlanmak/",
+        "de": "https://nesealkaya.com/de/blog/neuanfang-und-veraenderung-gestalten/"
+      },
+      {
+        "title": {
+          "tr": "Tek görüşme mi, süreçli koçluk mu? İhtiyacınıza uygun görüşme biçimi",
+          "de": "Einzeltermin oder längere Begleitung: Welches Gespräch passt zu meinem Anliegen?"
+        },
+        "description": {
+          "tr": "Odak seansı ile birden fazla görüşmeye yayılan yol arkadaşlığı arasındaki farklar.",
+          "de": "Was eine Fokussitzung von einer Begleitung über mehrere Termine unterscheidet."
+        },
+        "category": {
+          "tr": "Görüşme Rehberi",
+          "de": "Gesprächsformate"
+        },
+        "tr": "https://nesealkaya.com/blog/tek-gorusme-mi-surecli-kocluk-mu/",
+        "de": "https://nesealkaya.com/de/blog/einzeltermin-oder-laengere-begleitung/"
+      },
+      {
+        "title": {
+          "tr": "Alevi-Bektaşi geleneğinde yol, saygı ve manevi rehberlik üzerine",
+          "de": "Alevitische Tradition: Über den Weg, Respekt und spirituelle Begleitung"
+        },
+        "description": {
+          "tr": "Yol kavramına, insana saygıya ve manevi rehberlikle kişisel farkındalığın birbirinden ayrı konumuna dikkatli bir bakış.",
+          "de": "Ein differenzierter Blick auf den Begriff des Weges, persönliche Verantwortung und die Grenzen spiritueller Gespräche."
+        },
+        "category": {
+          "tr": "Manevi Rehberlik",
+          "de": "Spirituelle Begleitung"
+        },
+        "tr": "https://nesealkaya.com/blog/alevi-bektasi-geleneginde-yol-ve-insana-saygi/",
+        "de": "https://nesealkaya.com/de/blog/alevitische-tradition-weg-respekt-begleitung/"
+      },
+      {
+        "title": {
+          "tr": "Rüyalar ve semboller: Geleneksel yorumlama ile kişisel anlam arasındaki fark",
+          "de": "Träume und Symbole verstehen: Traditionelle Deutung und persönliche Bedeutung"
+        },
+        "description": {
+          "tr": "Rüya anlatılarını kişisel çağrışımlar, kültürel semboller ve gerçekçi beklentilerle ele almak.",
+          "de": "Warum Bilder aus Träumen unterschiedliche Bedeutungen haben können und welche Grenzen traditionelle Deutungen besitzen."
+        },
+        "category": {
+          "tr": "Semboller & Rüyalar",
+          "de": "Träume & Symbole"
+        },
+        "tr": "https://nesealkaya.com/blog/ruyalar-ve-sembolleri-anlamlandirmak/",
+        "de": "https://nesealkaya.com/de/blog/traeume-und-symbole-verstehen/"
+      }
+    ]
   }
 }

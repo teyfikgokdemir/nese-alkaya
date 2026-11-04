@@ -11,6 +11,8 @@
 - [Angebote](https://nesealkaya.com/de/angebote/)
 - [İletişim](https://nesealkaya.com/iletisim/)
 - [Kontakt](https://nesealkaya.com/de/kontakt/)
+- [Blog · Türkçe](https://nesealkaya.com/blog/)
+- [Journal · Deutsch](https://nesealkaya.com/de/blog/)
 - [Tam açıklamalar / Ausführliche Informationen](https://nesealkaya.com/llms-full.txt)
 - [Yapılandırılmış hizmet kataloğu / Service-Daten](https://nesealkaya.com/ai-catalog.json)
 
