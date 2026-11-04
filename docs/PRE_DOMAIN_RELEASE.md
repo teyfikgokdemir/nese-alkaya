@@ -32,3 +32,9 @@ Tarih: 2026-11-04. Bu doküman mevcut projede `nesealkaya.com` DNS bağlantısı
 
 ## Değişiklik kapsamı
 Bu otomatik kalite kapısı tasarım, içerik, Astro ana sürümü ve DNS kayıtlarını değiştirmez.
+
+## IndexNow hazırlandı
+- Kök dizine 32 haneli IndexNow doğrulama anahtarı yerleştirildi.
+- `npm run indexnow:check` çevrimdışı 54 canonical URL ve anahtar dosyasını kontrol eder, hiçbir HTTP isteği göndermez.
+- **Yalnızca alan adı ve HTTPS canlıya alındığında**, `npm run indexnow:submit` önce gerçek domain üzerinden anahtarı doğrular, ardından IndexNow'a bildirir.
+- 200/202 yanıtları bildirim alındı demektir, indeksleme garantisi değildir.
