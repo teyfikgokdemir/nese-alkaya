@@ -75,7 +75,7 @@ for(const name of ['.well-known/ard.json','.well-known/ai-catalog.json']){
  try{const j=JSON.parse(read(path.join(dist,name)));check(j.specVersion==='1.0'&&j.entries.length>0,'ARD schema basics: '+name)}catch(e){check(false,'Invalid ARD: '+name)}
 }
 for(const lang of ['tr','de']){
- const file=path.join(dist,'og','nese-alkaya-'+lang+'.jpg');
+ const file=path.join(dist,'og','nese-alkaya-portre-'+lang+'.jpg');
  check(fs.existsSync(file),'Missing OG JPG for '+lang);
  if(fs.existsSync(file)){
   const bytes=fs.readFileSync(file);
