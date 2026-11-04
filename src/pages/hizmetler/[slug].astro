@@ -7,10 +7,25 @@ const category=coaching.some(s=>s.slug===service.slug)?'Yaşam Koçluğu':'Manev
 const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent('Merhaba Neşe Hanım, '+service.title+' hakkında bilgi almak istiyorum.');
 ---
 <Base title={service.title} description={service.short} crumbs={[{name:'Ana Sayfa',href:'/'},{name:'Hizmetler',href:'/hizmetler/'},{name:service.title,href:Astro.url.pathname}]}>
-<section class="detail-hero"><div class="shell detail-hero-grid">
-<div class="detail-introduction"><a href="/hizmetler/" class="backlink">← Hizmetlere dön</a><span class="overline">{category}</span><h1>{service.title}</h1><p class="detail-summary">{service.short}</p><a class="button button-gold" href={wa} target="_blank" rel="noopener noreferrer">Görüşme hakkında bilgi alın <span aria-hidden="true">↗</span></a></div>
-<aside class="detail-topics"><span class="overline">Görüşme odağı</span><h2>Üzerinde konuşabileceklerimiz</h2><ul>{service.topics.map(t=><li>{t}</li>)}</ul></aside>
-</div></section>
-<section class="detail-body-section"><div class="shell detail-editorial"><div><span class="overline">Neşe Alkaya ile görüşme</span><h2>Bu görüşme hakkında</h2></div><div class="detail-editorial-copy"><p>{service.description}</p><p>Görüşme biçimi, süresi ve ücret bilgilerini iletişime geçerek netleştirebilirsiniz. Her görüşme, kişisel beklentilere ve sınırlara saygı çerçevesinde ilerler.</p><a href="/iletisim/" class="text-link">İletişim seçenekleri <span aria-hidden="true">↗</span></a></div></div></section>
-<div class="detail-disclaimer-section"><div class="shell"><p>Bilgilendirme: Bu hizmet tıbbi tanı, tedavi, psikoterapi, hukuki veya finansal danışmanlık yerine geçmez. Manevi yorumlar kesin sonuç garantisi sunmaz.</p></div></div>
+<section class="detail-hero">
+ <div class="shell detail-content-wrap">
+  <a href="/hizmetler/" class="backlink">← Tüm hizmetler</a>
+  <span class="overline">{category}</span>
+  <h1>{service.title}</h1>
+  <p class="detail-summary">{service.short}</p>
+  <a class="button button-gold" href={wa} target="_blank" rel="noopener noreferrer">Görüşme hakkında bilgi alın <span aria-hidden="true">↗</span></a>
+ </div>
+</section>
+<section class="detail-body-section">
+ <div class="shell detail-content-wrap">
+  <div class="detail-article">
+   <div class="detail-article-label"><span class="overline">Görüşme hakkında</span><h2>Birlikte ele alacağımız konular</h2></div>
+   <div class="detail-article-copy"><p>{service.description}</p><p>Görüşmenin süresi, biçimi ve koşulları iletişim sırasında birlikte netleştirilir.</p></div>
+  </div>
+  <div class="detail-topics-row" aria-label="Görüşmede ele alınabilecek konular">
+    {service.topics.map(t=><span>{t}</span>)}
+  </div>
+ </div>
+</section>
+<div class="detail-disclaimer-section"><div class="shell detail-content-wrap"><p>Bu hizmet tıbbi tanı, tedavi, psikoterapi, hukuki veya finansal danışmanlık yerine geçmez. Manevi yorumlar kesin sonuç garantisi sunmaz.</p></div></div>
 </Base>
