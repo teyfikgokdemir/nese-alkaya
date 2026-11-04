@@ -1,4 +1,4 @@
-// Özgün Türkçe editoryal makaleler.
+// Türkçe özgün editoryal makaleler. Görüş, yorum ve hizmet kapsamı tedavi vaadi değildir.
 export const blogTR=[
   {
     "slug": "yasam-koclugu-nedir-ne-degildir",
@@ -42,9 +42,24 @@ export const blogTR=[
           "Koçlukta ilerleme her zaman büyük bir değişiklik şeklinde görünmez. Bazen iki seçenek arasındaki farkı görmek, bir konuşma için daha açık bir cümle kurmak veya ertelenmiş bir adımı küçük parçalara ayırmak yeterince önemli olabilir. Ölçülebilir ama esnek bir sonraki adım belirlemek günlük hayata geçişi kolaylaştırabilir.",
           "Neşe Alkaya ile yapılan kişisel görüşmeler, dinlemek ve kişinin kendi yanıtlarına yaklaşması için alan açmak fikri üzerine kuruludur. Görüşmenin size uygunluğunu değerlendirmek için mevcut sorunuzu paylaşabilir; kapsam, ücret ve zamanlamayı başlamadan önce netleştirebilirsiniz. Kesin dönüşüm veya başarı garantisi verilmez."
         ]
+      },
+      {
+        "heading": "Görüşme sonrasında düşünceleri nasıl takip edebilirsiniz?",
+        "paragraphs": [
+          "Görüşmeden sonra birkaç cümlelik not tutmak, konuşma sırasında oluşan düşüncelerin günlük hayatta kaybolmasını önleyebilir. Özellikle üzerinde durmak istediğiniz soruyu, fark ettiğiniz farklı bakış açısını ve denemeyi düşündüğünüz küçük adımı yazabilirsiniz. Bunun bir performans raporuna dönüşmesi gerekmez. Notlar yalnızca kendinize ait bir hatırlatma işlevi görür.",
+          "Bir sonraki görüşmede veya kendi değerlendirme zamanınızda bu notlara geri dönün. Beklediğiniz gibi ilerlemeyen noktaları başarısızlık olarak yorumlamadan inceleyin. Hangi koşullar değişti, hangi varsayımınız farklılaştı ve şimdi neye ihtiyacınız var? Böyle sorular, kişisel sürecin daha bilinçli ilerlemesine katkı sağlayabilir."
+        ]
+      },
+      {
+        "heading": "Bir görüşmenin uygunluğunu nasıl anlarsınız?",
+        "paragraphs": [
+          "İlk temas sırasında görüşmenin kapsamını öğrenmeye hakkınız vardır. Kiminle konuşacağınızı, hangi yöntemlerin kullanılacağını, ne kadar süreceğini ve hangi konuların hizmet dışında kaldığını sorabilirsiniz. Bu soruların açıkça yanıtlanması, sizin için güvenli ve anlaşılır bir başlangıç oluşturur.",
+          "Görüşmenin sonunda kesin bir değişim yaşamak zorunda olmadığınızı da unutmayın. Kimi zaman bir konuyu başka açıdan görebilmek, kimi zaman kendi sınırlarınızı fark etmek anlamlıdır. Eğer farklı bir uzmanlık alanına ihtiyaç duyuyorsanız uygun desteği aramak da sürecin değerli bir sonucudur."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 619
   },
   {
     "slug": "karar-verirken-netlik-kazanmak",
@@ -88,9 +103,24 @@ export const blogTR=[
           "Dikkatle düşünülmüş bir kararın sonucu da zorlayıcı olabilir. Sonradan ortaya çıkan bilgileri, geçmişte elinizde yokmuş gibi değerlendirmek kendinize haksızlık yaratabilir. Kararın verildiği andaki bilgiyi ve koşulları hatırlamak daha adil bir değerlendirme sağlar.",
           "Kişisel görüşmeler sizin yerinize karar vermez; sorularınızı netleştirmeniz için zaman ve yapı sunar. Bazen iyi bir görüşmenin sonucu kesin cevap değil, hangi soruyu sırada ele alacağınızı bilmek olur. Bu da önemli bir başlangıçtır."
         ]
+      },
+      {
+        "heading": "Karar yorgunluğunun farkına varmak",
+        "paragraphs": [
+          "Aynı konu üzerine gün boyunca tekrar tekrar düşünmek, yeni bir bilgi sağlamadığı halde yoğun bir yorgunluk yaratabilir. Böyle zamanlarda kısa süreli bir ara verip seçenekleri yazılı olarak ayırmak yararlı olabilir. Hangi düşüncenin aynı yere döndüğünü, hangisinin gerçekten yeni bir soru açtığını ayırt edin.",
+          "Düşünmek ile kendinizi tüketmek aynı şey değildir. Konuyu ele almak için belirli bir zaman dilimi ayırmak, kalan zamanda günlük sorumluluklarınıza yönelmeyi kolaylaştırabilir. Kararın ağırlığı büyükse güvenilir kişilerle konuşmak veya ilgili profesyonel desteği almak da düşünme yükünü paylaşmanın bir yoludur."
+        ]
+      },
+      {
+        "heading": "Kararınızı nasıl gözden geçirebilirsiniz?",
+        "paragraphs": [
+          "Bir seçeneğe yöneldikten sonra bütün şüphelerin ortadan kalkmasını beklemeyin. Gözden geçirme için makul bir tarih seçebilir, kararı etkileyen koşulların değişip değişmediğine bakabilirsiniz. Bu yöntem her gün aynı kararı baştan kurma baskısını azaltabilir.",
+          "Gözden geçirmek kararınızdan vazgeçmek zorunda olduğunuz anlamına gelmez. Yeni bilgi ortaya çıkarsa planı güncellemek bazen sorumluluğun parçasıdır. Önemli olan değişikliği bilinçli nedenlere dayandırmak ve kendinizi her belirsizlik için suçlamamaktır."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 577
   },
   {
     "slug": "iliskilerde-sinir-koymak",
@@ -134,9 +164,24 @@ export const blogTR=[
           "İlişkiler, iki kişinin her konuda aynı düşünmesini gerektirmez. Farklılıkların konuşulabildiği, karşılıklı hayır cevabının duyulabildiği bir iletişim daha gerçekçi olabilir. Zaman zaman kendi sınırlarınızın değişebileceğini de kabul edin; bu konuda açık olmak ilişkide esneklik sağlar.",
           "Tekrarlayan bir kırgınlığınız varsa ne olduğuna, ne hissettiğinize ve neye ihtiyaç duyduğunuza ayrı ayrı bakın. Böylece otomatik tepkiler yerine daha bilinçli bir ifade geliştirebilirsiniz. Kişisel görüşmeler de bu soruları sakin biçimde ele alabileceğiniz bir alan sunabilir."
         ]
+      },
+      {
+        "heading": "İş ve aile ilişkilerinde sınırların farklılığı",
+        "paragraphs": [
+          "İş yaşamında sınırlar çoğu zaman zamanlama, sorumluluk ve iletişim kanalları üzerinden görünür olur. Bir mesaja her saat yanıt vermemek veya görevin kapsamını netleştirmek mesleki bir ihtiyaç olabilir. Aile içinde ise paylaşım, ziyaret, yardım ve özel alan beklentileri daha hassas konuşmalar gerektirebilir.",
+          "Her ilişki türünde aynı cümleyi kullanmak zorunda değilsiniz. Kişiye ve duruma uygun, anlaşılır bir ifade seçebilirsiniz. Ancak bütün durumlarda sınırın temelinde kendi sorumluluğunuzu tanımak ve başkasının alanına saygı göstermek bulunur."
+        ]
+      },
+      {
+        "heading": "Sınır koymayı küçük örneklerle denemek",
+        "paragraphs": [
+          "Büyük bir tartışmanın ortasında ilk kez sınır koymaya çalışmak zor olabilir. Günlük hayattaki küçük taleplerde de düşünmek için zaman isteyebilirsiniz: 'Takvimime bakıp yanıt vereceğim' ya da 'Bunu üstlenmeden önce mevcut işlerimi tamamlamalıyım' gibi.",
+          "Bu tür cümleler hem size değerlendirme alanı sağlar hem de otomatik evet deme alışkanlığını fark ettirebilir. Küçük denemelerden sonra ne hissettiğinize, karşı tarafın nasıl tepki verdiğine ve hangi ifadeyi daha anlaşılır bulduğunuza bakın. Zamanla kendinize uygun iletişim biçimi gelişebilir."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 533
   },
   {
     "slug": "gunluk-stres-ve-duygusal-farkindalik",
@@ -180,9 +225,24 @@ export const blogTR=[
           "Stres veya kaygı uzun süre devam ediyor, uykuyu ya da günlük işlevleri belirgin biçimde etkiliyorsa bir sağlık uzmanına başvurmak önemlidir. Acil risk veya güvenlik sorunu olan durumlarda uygun acil yardım ve uzman desteği önceliklidir. Genel farkındalık önerileri tanı veya tedavi değildir.",
           "Yaşam koçluğu görüşmelerinde günlük ritim, kişisel sınırlar ve iletişim biçimleri ele alınabilir. Ancak bu görüşmeler psikoterapi, psikiyatrik değerlendirme veya tıbbi bakım yerine geçmez. Doğru ihtiyaca doğru destek türünü seçmek, sürecin en önemli adımlarından biridir."
         ]
+      },
+      {
+        "heading": "Belirsizlikle karşılaşınca ne yapılabilir?",
+        "paragraphs": [
+          "Hayatımızdaki her değişkeni kontrol etmemiz mümkün değildir. Bir başkasının kararı, ertelenen bir yanıt veya beklenmedik bir gelişme uzun süre zihnimizi meşgul edebilir. Bu durumda kontrol edebildiğiniz alanları ayrı bir listeye yazabilirsiniz: kendi iletişiminiz, hazırlığınız, bilgi toplama biçiminiz ve destek isteme seçenekleriniz.",
+          "Kontrol edemediğiniz alanları fark etmek teslim olmak anlamına gelmez. Tam tersine, enerjinizi gerçekçi biçimde kullanmanıza yardımcı olabilir. Bazı belirsizlikler zaman içinde açıklığa kavuşur; o zamana kadar günlük yaşamı tamamen askıya almamak da önemlidir."
+        ]
+      },
+      {
+        "heading": "Kendinize karşı kullandığınız dili fark edin",
+        "paragraphs": [
+          "Yoğun bir günün ardından 'Yine hiçbir şeyi yetiştiremedim' diye düşündüğünüzde yaptığınız işleri bütünüyle görünmez kılabilirsiniz. Daha dengeli bir ifade denemek mümkündür: 'Bugün bazı işler yetişmedi; yarın hangisi öncelikli?' gibi.",
+          "Bu yaklaşım zor duyguları inkâr etmek anlamına gelmez. Yalnızca kendinizi sürekli eleştirmek yerine durumu daha somut değerlendirmeyi sağlar. Günlük ritim oluştururken insanın değişen koşulları, dinlenme ihtiyacı ve hata yapabilme payı da hesaba katılmalıdır."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 550
   },
   {
     "slug": "yeni-baslangiclara-hazirlanmak",
@@ -226,9 +286,24 @@ export const blogTR=[
           "Bir hedefe yavaş yaklaşmak başarısızlık anlamına gelmez. Zaman zaman plan değiştirmek, beklemek veya önceliklerinizi yeniden belirlemek gerekebilir. Değişime yalnızca sonuç üzerinden değil, neler öğrendiğiniz ve kendi kararlarınıza nasıl yaklaştığınız üzerinden de bakın.",
           "Kişisel dönüşüm odaklı görüşmeler, bu soruları daha düzenli konuşmaya yardımcı olabilir. Hazır reçeteler ve kesin değişim vaatleri yerine neyin size uygun olduğunu, hangi adımı gerçekten atabileceğinizi ve sınırlarınızı birlikte değerlendirmek esastır."
         ]
+      },
+      {
+        "heading": "Başarı beklentisini gerçekçi kurmak",
+        "paragraphs": [
+          "Sosyal medyada değişim çoğu zaman hızlı ve eksiksiz bir başarı hikâyesi gibi anlatılır. Oysa günlük yaşam sorumlulukları devam ederken ilerlemek daha karmaşıktır. Kişisel dönüşümü başkalarının temposuyla ölçmek, kendi koşullarınızı görmezden gelmenize neden olabilir.",
+          "Hedeflerinize ne kadar yaklaştığınızı değerlendirirken yalnızca sonucu değil, hazırlık ve öğrenme adımlarını da hesaba katın. Bir bilgi toplamak, destek istemek veya uygun olmayan bir seçeneği elemek de gelişimin parçasıdır."
+        ]
+      },
+      {
+        "heading": "Değişim sürecinde ilişkileri korumak",
+        "paragraphs": [
+          "Yeni bir hedefe yönelirken yakın çevrenizle beklentilerinizi açıkça konuşmak yararlı olabilir. Başkalarının her değişikliği sizinle aynı heyecanla karşılamasını beklemeyin. Onların sorularını dinlerken kendi ihtiyaçlarınızı da anlaşılır biçimde ifade etmeye çalışın.",
+          "Değişim bazı alışkanlıkların ve rollerin yeniden konuşulmasını gerektirir. Bu konuşmaların her zaman kolay olması beklenmez. Zaman ve sorumluluk paylaşımı hakkında somut anlaşmalar yapmak, kişisel hedefleri günlük yaşamın gerçekleriyle buluşturabilir."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 501
   },
   {
     "slug": "tek-gorusme-mi-surecli-kocluk-mu",
@@ -272,9 +347,24 @@ export const blogTR=[
           "Tek görüşme her zaman yüzeysel, süreçli görüşme her zaman daha etkili değildir. Bazen bir soruyu netleştirmek için bir konuşma yeterli gelebilir; bazen de konuya tekrar dönmek faydalıdır. Tercih yaparken kendi zamanınızı, beklentinizi ve ihtiyaçlarınızı esas alın.",
           "Neşe Alkaya ile görüşme seçeneklerini değerlendirirken gündeminizi paylaşabilir, olası görüşme biçimleri hakkında bilgi isteyebilirsiniz. Karar, sizin için anlamlı bir ihtiyaç ve açık bir çalışma çerçevesi üzerinden verilmelidir."
         ]
+      },
+      {
+        "heading": "Görüşmeye hazırlanırken yazabileceğiniz üç soru",
+        "paragraphs": [
+          "Önce konuşmak istediğiniz konuyu bir cümleye indirin. Ardından bugüne kadar nasıl yaklaştığınızı ve hangi noktada takıldığınızı yazın. Son olarak, görüşme sonrasında neyin daha anlaşılır olmasını umduğunuzu düşünün. Bu hazırlık, hizmetin kapsamını belirlemeyi kolaylaştırabilir.",
+          "Belirlediğiniz soruların kusursuz olması gerekmez. İlk görüşmenin bir kısmı zaten gündemi netleştirmeye ayrılabilir. Önemli olan kendi beklentinizi açık ifade etmek ve teklif edilen görüşme biçiminin bu beklentiye uygun olup olmadığını değerlendirmektir."
+        ]
+      },
+      {
+        "heading": "Görüşme sayısı kalite ölçüsü değildir",
+        "paragraphs": [
+          "Birden fazla görüşmenin otomatik olarak daha iyi sonuç vereceğini varsaymak doğru değildir. Aynı şekilde tek bir görüşmenin mutlaka yeterli olacağı da söylenemez. Her konunun kapsamı, kişinin koşulları ve ihtiyaç duyulan düşünme süresi farklı olabilir.",
+          "Hizmeti seçerken önerilen görüşme sayısının gerekçesini sorun. Süreç boyunca değerlendirme yapabilmek, gerektiğinde bir sonraki görüşmeyi yeniden düşünmek ve ücretleri önceden bilmek makul beklentilerdir. Koçluk karar özgürlüğünü azaltan değil, onu destekleyen bir çerçevede sunulmalıdır."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 492
   },
   {
     "slug": "alevi-bektasi-geleneginde-yol-ve-insana-saygi",
@@ -318,9 +408,24 @@ export const blogTR=[
           "Bir görüşmenin başlangıcında kişinin hangi konuda konuşmak istediği, hangi tür uygulamadan söz edildiği ve sınırların ne olduğu açıklanmalıdır. Herkesin aynı sembollere, anlatılara veya ritüellere aynı anlamı vermesi beklenemez. Soruların açıkça sorulabildiği bir ortam güven açısından önemlidir.",
           "Bir konuda merakınız varsa önce uygulamanın çerçevesini, süresini ve ücretini öğrenin. Geleneksel anlam arayışı kişisel seçime dayanmalıdır. Manevi bir konuşmanın değeri, kesin sonuç vaat etmesinden değil, kişinin kendi sorularını daha dikkatli ele alabileceği saygılı bir alandan doğabilir."
         ]
+      },
+      {
+        "heading": "Gelenek ile kişisel yorum arasındaki mesafe",
+        "paragraphs": [
+          "Her inanç geleneğinde insanlar kendi deneyimlerini anlatırken bazen daha geniş bir topluluğun dilini kullanır. Ancak bir kişinin aktarımı bütün toplulukların görüşünü temsil etmeyebilir. Özellikle semboller ve manevi unvanlar konuşulurken bağlamı ve farklı yorumları hatırlamak yararlıdır.",
+          "Bir kavram hakkında derinleşmek isteyenler sözlü tarih anlatılarını, toplulukların kendi kaynaklarını ve akademik çalışmaları birlikte değerlendirebilir. Bu yaklaşım, yaşayan bir geleneği tek bir tanıtım metnine indirgemekten kaçınmaya yardımcı olur."
+        ]
+      },
+      {
+        "heading": "Görüşmede kişinin özgürlüğünü korumak",
+        "paragraphs": [
+          "Manevi bir konuşmada saygı, kişinin inancını veya kararını zorlamamayı da içerir. Soru sorabilmek, bir uygulamayı reddedebilmek ve açıklama istemek görüşmenin doğal parçaları olmalıdır. Geleneksel bir yöntemden söz edilmesi, herkesin o yöntemi benimsemesi gerektiği anlamına gelmez.",
+          "Açık bir görüşme çerçevesi hem uygulamayı anlatan kişinin sınırlarını hem de ziyaretçinin beklentilerini görünür kılar. Bu nedenle yöntem, süre, ücret ve beklentiler önceden konuşulmalı; kesin gelecek bilgisi veya tedavi vaadi verilmemelidir."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 553
   },
   {
     "slug": "ruyalar-ve-sembolleri-anlamlandirmak",
@@ -364,8 +469,23 @@ export const blogTR=[
           "Rüya yorumlama üzerine yapılan manevi bir görüşmede kişi gördüklerini anlatabilir ve sembollerin geleneksel çağrışımları konuşulabilir. Böyle bir görüşmeden kesin gelecek bilgisi, tanı veya tedavi sonucu beklenmemelidir. Sürenin ve kapsamın önceden belirtilmesi de önemlidir.",
           "Neşe Alkaya'nın manevi rehberlik kapsamında yer verdiği rüya yorumlama alanı, sembolik bir sohbet çerçevesinde değerlendirilmelidir. Rüyaların kişisel anlamı üzerine düşünmek isteyenler önce uygulamanın nasıl yürütüldüğü hakkında doğrudan bilgi alabilir."
         ]
+      },
+      {
+        "heading": "Aynı sembol herkeste neden farklı olabilir?",
+        "paragraphs": [
+          "Bir sembolün anlamı kişinin yaşadığı çevreye, çocukluk deneyimlerine ve kültürel anlatılara bağlı olarak değişebilir. Aynı yol görüntüsü biri için yeni bir başlangıç, başka biri için belirsizlik çağrıştırabilir. Bu nedenle rüyada görülen nesneleri sabit sözlük maddeleri gibi yorumlamak sınırlı bir yaklaşımdır.",
+          "Sembolü konuşurken önce kişinin ne hissettiğini ve onun yaşamında hangi anlamları taşıdığını sormak, tek yönlü yorumdan daha dikkatli bir başlangıç oluşturabilir. Yine de bu değerlendirmeler kişisel çağrışımlardır; dış dünyaya ilişkin doğrulanmış bilgi değildir."
+        ]
+      },
+      {
+        "heading": "Bir rüyadan sonra merakla kaygıyı ayırmak",
+        "paragraphs": [
+          "İlginç bir rüya üzerine konuşmak keyifli olabilir; bazen de korkutucu bir görüntü zihni meşgul eder. Kendinize rüyanın yalnızca merak mı uyandırdığını yoksa günlük yaşamınızı etkileyen belirgin bir kaygıya mı dönüştüğünü sorabilirsiniz.",
+          "Rüya hakkında internette korkutucu kesin yorumlar okumak kaygıyı artırabilir. Bunun yerine sakin ve gerçekçi bilgiye yönelmek önemlidir. Rüyalar uykunuzu bozuyor, sık tekrarlayan yoğun sıkıntılar yaratıyorsa uygun sağlık uzmanıyla görüşmek daha doğru bir adımdır."
+        ]
       }
     ],
-    "date": "2026-11-04"
+    "date": "2026-11-04",
+    "wordCount": 544
   }
 ];
