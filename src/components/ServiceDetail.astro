@@ -1,0 +1,115 @@
+---
+import {site,coaching,spiritual} from '../data/content.js';
+import {deCoaching,deSpiritual} from '../data/de.js';
+import {expandedServiceCopy} from '../data/service-expanded.js';
+
+const {service,lang='tr',isCoaching=false}=Astro.props;
+const isDe=lang==='de';
+const trSlug=isDe?service.tr:service.slug;
+const detail=expandedServiceCopy[trSlug]?.[lang];
+if(!detail)throw new Error('Missing localized service detail: '+trSlug+' / '+lang);
+const group=isDe?(isCoaching?deCoaching:deSpiritual):(isCoaching?coaching:spiritual);
+const currentIndex=group.findIndex(item=>item.slug===service.slug);
+const related=[1,2].map(offset=>group[(currentIndex+offset)%group.length]).filter(Boolean);
+const prefix=isDe?'/de/angebote/':'/hizmetler/';
+const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent(isDe?'Guten Tag Frau Alkaya, ich interessiere mich für '+service.title+'. Können Sie mir Ablauf und Konditionen nennen?':'Merhaba Neşe Hanım, '+service.title+' hizmetinin kapsamı ve görüşme koşulları hakkında bilgi almak istiyorum.');
+const t=isDe?{
+  all:'← Alle Angebote',category:isCoaching?'Persönliches Coaching':'Spirituelle Begleitung',
+  contact:'Gespräch anfragen ↗',eyebrow:'Ein Blick auf das Angebot',
+  topics:'Mögliche Gesprächsthemen',questionsEyebrow:'Zur Orientierung',
+  questionsTitle:'Fragen, die den Anfang machen können.',
+  questionsDesc:'Jedes Anliegen ist anders. Diese Fragen sind Beispiele – keine Voraussetzung für ein Gespräch.',
+  processEyebrow:'Ablauf und Erwartungen',processTitle:'Ein Gespräch in Ihrem Tempo.',
+  processIntro:'Sie teilen nur das, was Sie ansprechen möchten. Vor einer Terminvereinbarung können Dauer, Format, Verfügbarkeit und Konditionen geklärt werden.',
+  processTitle2:'Was Sie für sich mitnehmen können',
+  faqEyebrow:'Gut zu wissen',faqTitle:'Häufige Fragen zu diesem Angebot',
+  relatedEyebrow:'Weitere Perspektiven',relatedTitle:'Vielleicht passt auch dieses Thema.',
+  relatedLink:'Angebot ansehen ↗',ctaTitle:'Ist das der richtige Rahmen für Ihr Anliegen?',
+  ctaText:'Schreiben Sie mir, wenn Sie Fragen zum Ablauf, zur Verfügbarkeit oder zu den Konditionen haben.',
+  disclaimer:isCoaching?'Dieses Coaching ersetzt keine Psychotherapie, medizinische, rechtliche oder finanzielle Beratung. Ergebnisse werden nicht garantiert.':'Spirituelle und traditionelle Deutungen sind weder wissenschaftliche Diagnosen noch Heilbehandlungen oder sichere Zukunftsprognosen. Für gesundheitliche, rechtliche und finanzielle Fragen wenden Sie sich bitte an qualifizierte Fachpersonen.'
+}:{
+  all:'← Tüm hizmetler',category:isCoaching?'Yaşam Koçluğu':'Manevi Rehberlik',
+  contact:'Görüşme hakkında bilgi alın ↗',eyebrow:'Hizmete yakından bakış',
+  topics:'Ele alınabilecek başlıklar',questionsEyebrow:'Düşünmeye başlangıç',
+  questionsTitle:'Bazen doğru soru, yeni bir bakış açar.',
+  questionsDesc:'Her insanın gündemi farklıdır. Bunlar görüşmeye hazırlanırken düşünebileceğiniz örnek sorulardır; zorunlu bir liste değildir.',
+  processEyebrow:'Görüşmenin çerçevesi',processTitle:'Kendi ritminizde bir görüşme.',
+  processIntro:'Sadece paylaşmak istediğiniz konuları ele alırız. Randevu öncesinde görüşmenin biçimini, süresini, uygunluğu ve ücretini doğrudan netleştirebilirsiniz.',
+  processTitle2:'Görüşmeden kendinize ayırabileceğiniz',
+  faqEyebrow:'Merak edilenler',faqTitle:'Bu hizmet hakkında sık sorulanlar',
+  relatedEyebrow:'Başka bir bakış açısı',relatedTitle:'İlginizi çekebilecek diğer hizmetler.',
+  relatedLink:'Hizmeti keşfet ↗',ctaTitle:'Bu görüşme size uygun olabilir mi?',
+  ctaText:'Görüşme kapsamını, uygunluğu ve koşulları öğrenmek için iletişime geçebilirsiniz.',
+  disclaimer:isCoaching?'Bu görüşmeler psikoterapi, tıbbi tanı veya tedavi, hukuki ya da finansal danışmanlık değildir. Belirli bir sonuç garanti edilmez.':'Manevi ve geleneksel yorumlar bilimsel teşhis, tedavi veya kesin gelecek tahmini değildir. Sağlık, hukuk ve finans konularında yetkin uzmanlara başvurulmalıdır.'
+};
+---
+<section class="detail-hero service-deep-hero">
+  <div class="shell detail-content-wrap">
+    <a href={isDe?'/de/angebote/':'/hizmetler/'} class="backlink">{t.all}</a>
+    <span class="overline">{t.category}</span>
+    <h1>{service.title}</h1>
+    <p class="detail-summary">{service.short}</p>
+    <a class="button button-gold" href={wa} target="_blank" rel="noopener noreferrer">{t.contact}</a>
+  </div>
+</section>
+<section class="service-deep-intro" aria-labelledby="service-overview">
+  <div class="shell service-deep-intro-grid">
+    <div class="service-deep-copy">
+      <span class="overline">{t.eyebrow}</span>
+      <h2 id="service-overview">{detail.headline}</h2>
+      <p class="service-deep-lead">{service.description}</p>
+      <p>{detail.context}</p>
+      <p>{detail.approach}</p>
+    </div>
+    <aside class="service-deep-aside" aria-label={t.topics}>
+      <span class="overline">{t.topics}</span>
+      <ul>{service.topics.map(topic=><li>{topic}</li>)}</ul>
+    </aside>
+  </div>
+</section>
+<section class="service-deep-prompts" aria-labelledby="service-prompts-title">
+  <div class="shell">
+    <div class="service-deep-heading">
+      <span class="overline overline-light">{t.questionsEyebrow}</span>
+      <h2 id="service-prompts-title">{t.questionsTitle}</h2>
+      <p>{t.questionsDesc}</p>
+    </div>
+    <div class="service-deep-prompt-grid">
+      {detail.situations.map(question=><div class="service-deep-prompt"><span aria-hidden="true" class="service-deep-prompt-mark"></span><p>{question}</p></div>)}
+    </div>
+  </div>
+</section>
+<section class="service-deep-process" aria-labelledby="service-process-title">
+  <div class="shell service-deep-process-grid">
+    <div>
+      <span class="overline">{t.processEyebrow}</span>
+      <h2 id="service-process-title">{t.processTitle}</h2>
+      <p>{t.processIntro}</p>
+    </div>
+    <div class="service-deep-takeaway">
+      <h3>{t.processTitle2}</h3>
+      <p>{detail.takeaway}</p>
+    </div>
+  </div>
+</section>
+<section class="faq-block service-deep-faq" aria-labelledby="service-faq-title">
+  <div class="shell">
+    <span class="overline">{t.faqEyebrow}</span>
+    <h2 id="service-faq-title">{t.faqTitle}</h2>
+    <div class="faq-list">{detail.faq.map(item=><details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div>
+  </div>
+</section>
+<section class="service-deep-related" aria-labelledby="service-related-title">
+  <div class="shell">
+    <span class="overline">{t.relatedEyebrow}</span>
+    <h2 id="service-related-title">{t.relatedTitle}</h2>
+    <div class="service-deep-related-grid">
+      {related.map(item=><a href={prefix+item.slug+'/'} class="service-deep-related-link"><span>{item.title}</span><small>{t.relatedLink}</small></a>)}
+    </div>
+    <div class="final-banner service-deep-cta">
+      <div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div>
+      <a class="button button-gold" href={wa} target="_blank" rel="noopener noreferrer">{t.contact}</a>
+    </div>
+    <p class="service-deep-disclaimer">{t.disclaimer}</p>
+  </div>
+</section>
