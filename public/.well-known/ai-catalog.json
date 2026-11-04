@@ -1,0 +1,51 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Neşe Alkaya",
+    "documentationUrl": "https://nese-alkaya.pages.dev/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:nesealkaya.com:discovery:llms",
+      "displayName": "Neşe Alkaya – AI orientation",
+      "type": "text/plain",
+      "url": "https://nese-alkaya.pages.dev/llms.txt",
+      "description": "Bilingual site overview and direct links to coaching, spiritual guidance and contact resources."
+    },
+    {
+      "identifier": "urn:air:nesealkaya.com:discovery:llms-full",
+      "displayName": "Neşe Alkaya – detailed AI documentation",
+      "type": "text/plain",
+      "url": "https://nese-alkaya.pages.dev/llms-full.txt",
+      "description": "Extended Turkish and German service and content documentation."
+    },
+    {
+      "identifier": "urn:air:nesealkaya.com:discovery:sitemap",
+      "displayName": "Neşe Alkaya – XML sitemap",
+      "type": "application/xml",
+      "url": "https://nese-alkaya.pages.dev/sitemap.xml",
+      "description": "Discover the site's public Turkish and German canonical page URLs."
+    },
+    {
+      "identifier": "urn:air:nesealkaya.com:discovery:legacy-catalog",
+      "displayName": "Neşe Alkaya – structured site catalogue",
+      "type": "application/json",
+      "url": "https://nese-alkaya.pages.dev/ai-catalog.json",
+      "description": "Legacy structured website, services and editorial page inventory."
+    },
+    {
+      "identifier": "urn:air:nesealkaya.com:discovery:turkish-blog",
+      "displayName": "Neşe Alkaya – Türkçe blog",
+      "type": "text/html",
+      "url": "https://nese-alkaya.pages.dev/blog/",
+      "description": "Original articles on personal coaching, decisions, relationships and spiritual traditions."
+    },
+    {
+      "identifier": "urn:air:nesealkaya.com:discovery:german-blog",
+      "displayName": "Neşe Alkaya – deutschsprachiger Blog",
+      "type": "text/html",
+      "url": "https://nese-alkaya.pages.dev/de/blog/",
+      "description": "German-language articles about coaching, inner clarity, relationships and traditions."
+    }
+  ]
+}
