@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import {coaching,spiritual} from '../../data/content.js';
+const faqItems=[{"q":"Görüşme nasıl planlanır?","a":"Size uygun hizmeti seçtikten sonra WhatsApp veya e-posta üzerinden iletişime geçebilirsiniz. Görüşme süresi, kapsamı ve ücret bilgisi önceden netleştirilir."},{"q":"Yaşam koçluğu ile manevi rehberlik aynı hizmet mi?","a":"Hayır. Kişisel farkındalık ve karar netliği odaklı koçluk görüşmeleri ile geleneksel, sembolik yorumlama uygulamaları birbirinden ayrı sunulur."},{"q":"Görüşmeler terapi veya tıbbi tedavi yerine geçer mi?","a":"Hayır. Görüşmeler tıbbi tanı, tedavi veya psikoterapi değildir. Sağlıkla ilgili konularda yetkin uzmanlara başvurulmalıdır."}];
 ---
-<Base title="Hizmetler" description="Neşe Alkaya’nın bireysel yaşam koçluğu ve manevi rehberlik hizmetleri: karar netliği, yeni başlangıçlar, duru görü, rüya yorumlama ve daha fazlası.">
+<Base faqItems={faqItems} title="Hizmetler" description="Neşe Alkaya’nın bireysel yaşam koçluğu ve manevi rehberlik hizmetleri: karar netliği, yeni başlangıçlar, duru görü, rüya yorumlama ve daha fazlası.">
 <section class="inner-hero"><div class="shell"><span class="overline">Hizmetler</span><div class="inner-hero-grid"><h1>Her yolculuk kendine özgüdür.</h1><p>Hayatınızdaki konuları değerlendirmek, düşüncelerinizi toparlamak veya manevi bir bakış açısı edinmek için iki ayrı çalışma alanını keşfedin.</p></div></div></section>
 <section class="section-space section-warm"><div class="shell">
   <div class="section-heading"><div><span class="overline">Bireysel görüşmeler</span><h2 class="display-title">Yaşam Koçluğu</h2></div><p>Her görüşme, kendi ihtiyaçlarınız ve öncelikleriniz doğrultusunda şekillenir.</p></div>
@@ -14,4 +15,5 @@ import {coaching,spiritual} from '../../data/content.js';
   <p class="fineprint">Geleneksel ve sezgisel yorumlar bilimsel veya tıbbi değerlendirme, kesin öngörü veya sonuç garantisi olarak sunulmaz.</p>
 </div></section>
 <section class="section-space"><div class="shell"><p class="disclaimer">Görüşmeler gizlilik ve karşılıklı saygı çerçevesinde yürütülür. Sunulan hizmetler tıbbi tanı, tedavi veya psikoterapi yerine geçmez; hukuki, finansal, yatırım veya vergi danışmanlığı niteliğinde değildir. Gerektiğinde ilgili uzmanlara başvurulması önerilir.</p><div class="final-banner"><div><span class="overline overline-light">Görüşmeler hakkında</span><h2 class="display-title">Birlikte netleştirelim.</h2><p>Görüşme süresi, ücret ve uygunluk bilgilerini iletişime geçerek öğrenebilirsiniz.</p></div><a href="/iletisim/" class="button button-gold">İletişime geçin <span aria-hidden="true">↗</span></a></div></div></section>
+<section class="faq-block"><div class="shell"><span class="overline">Merak edilenler</span><h2>Sık sorulan sorular</h2><div class="faq-list">{faqItems.map(item=><details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></div></section>
 </Base>
