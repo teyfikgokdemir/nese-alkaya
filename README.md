@@ -22,3 +22,12 @@ Hakkımda bilgileri 4 Kasım 2026 tarihinde iletilen Neşe Alkaya biyografi metn
 
 ## Önemli
 Sezgisel / manevi çalışmalar bilimsel tıbbi tedavi veya kesin öngörü değildir. Sağlık, finans ve hukuk danışmanlığı yerine geçmez.
+
+## Otomatik teknik kalite kapısı
+- `npm run build` komutu statik HTML üretiminden sonra `npm run verify` çalıştırır.
+- `scripts/verify-build.mjs` 54 rotanın varlığı, 16 blog, canonical, 3 hreflang, temel JSON-LD, dahili dosya bağlantıları ve ARD/SEO keşif dosyalarını denetler.
+- `.github/workflows/quality.yml` aynı derleme denetimini pull request ve main branch push işlemlerinde çalıştırır.
+- Kontroller derleme artefaktını doğrular; Cloudflare deployment, Lighthouse ve özel alan adı doğrulamasının yerini almaz.
+
+## Alan adı öncesi kapsam
+Bu projenin açık işleri ve alan adı geçiş kapıları için `docs/PRE_DOMAIN_RELEASE.md` dosyasına bakın.
