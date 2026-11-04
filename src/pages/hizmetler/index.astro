@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import {coaching,spiritual} from '../../data/content.js';
 ---
 <Base title="Hizmetler" description="Neşe Alkaya’nın bireysel yaşam koçluğu ve manevi rehberlik hizmetleri: karar netliği, yeni başlangıçlar, duru görü, rüya yorumlama ve daha fazlası.">
-<section class="inner-hero"><div class="shell"><span class="overline">Hizmetler</span><div class="inner-hero-grid"><h1>Her yolculuk<br/>kendine özgüdür.</h1><p>Hayatınızdaki konuları değerlendirmek, düşüncelerinizi toparlamak veya manevi bir bakış açısı edinmek için iki ayrı çalışma alanını keşfedin.</p></div></div></section>
+<section class="inner-hero"><div class="shell"><span class="overline">Hizmetler</span><div class="inner-hero-grid"><h1>Her yolculuk kendine özgüdür.</h1><p>Hayatınızdaki konuları değerlendirmek, düşüncelerinizi toparlamak veya manevi bir bakış açısı edinmek için iki ayrı çalışma alanını keşfedin.</p></div></div></section>
 <section class="section-space section-warm"><div class="shell">
   <div class="section-heading"><div><span class="overline">Bireysel görüşmeler</span><h2 class="display-title">Yaşam Koçluğu</h2></div><p>Her görüşme, kendi ihtiyaçlarınız ve öncelikleriniz doğrultusunda şekillenir.</p></div>
   <div class="service-catalog">{coaching.map(s=><a class="service-catalog-item" href={'/hizmetler/'+s.slug+'/'}><div><span class="card-category">Bireysel görüşme</span><h3>{s.title}</h3><p>{s.short}</p></div><span class="service-catalog-arrow" aria-hidden="true">↗</span></a>)}</div>
