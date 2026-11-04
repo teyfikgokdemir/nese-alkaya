@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import {site} from '../data/content.js';
 import {deServices,deCoaching,deSpiritual,deTopics,deSiteDescription} from '../data/de.js';
 import SocialLinks from './SocialLinks.astro';
+import ServiceDetail from './ServiceDetail.astro';
+import {expandedServiceCopy} from '../data/service-expanded.js';
 const {kind='home',service=null}=Astro.props;
 const wa=(context)=>'https://wa.me/'+site.phone+'?text='+encodeURIComponent('Guten Tag Frau Alkaya, ich interessiere mich für '+context+'. Können Sie mir weitere Informationen geben?');
 const titles={home:'Coaching und spirituelle Begleitung',about:'Über mich',services:'Angebote im Überblick',insights:'Gedanken & Einblicke',contact:'Kontakt & Gespräch'};
@@ -14,7 +16,7 @@ const desc={
  contact:'Nehmen Sie Kontakt zu Neşe Alkaya auf. Fragen zu Gesprächsablauf, Verfügbarkeit und Konditionen klären Sie direkt per WhatsApp oder E-Mail.'
 };
 const title=service?.title||titles[kind];
-const faqItems=kind==='services'?[{"q":"Wie kann ich ein Gespräch anfragen?","a":"Wählen Sie ein passendes Angebot und schreiben Sie per WhatsApp oder E-Mail. Dauer, Ablauf und Konditionen werden vor dem Termin gemeinsam geklärt."},{"q":"Sind Coaching und spirituelle Begleitung dasselbe?","a":"Nein. Persönliches Coaching und traditionelle oder symbolische Deutungsangebote sind klar voneinander getrennte Angebote."},{"q":"Ersetzen die Gespräche eine Therapie?","a":"Nein. Es werden weder medizinische Diagnosen noch psychotherapeutische Behandlungen angeboten. Bei gesundheitlichen Fragen wenden Sie sich bitte an qualifizierte Fachpersonen."}]:[];
+const faqItems=kind==='services'?[{"q":"Wie kann ich ein Gespräch anfragen?","a":"Wählen Sie ein passendes Angebot und schreiben Sie per WhatsApp oder E-Mail. Dauer, Ablauf und Konditionen werden vor dem Termin gemeinsam geklärt."},{"q":"Sind Coaching und spirituelle Begleitung dasselbe?","a":"Nein. Persönliches Coaching und traditionelle oder symbolische Deutungsangebote sind klar voneinander getrennte Angebote."},{"q":"Ersetzen die Gespräche eine Therapie?","a":"Nein. Es werden weder medizinische Diagnosen noch psychotherapeutische Behandlungen angeboten. Bei gesundheitlichen Fragen wenden Sie sich bitte an qualifizierte Fachpersonen."}]:kind==='detail'&&service?expandedServiceCopy[service.tr].de.faq:[];
 const description=service?.short||desc[kind];
 const isCoaching=service&&deCoaching.some(s=>s.slug===service.slug);
 const serviceLabel=isCoaching?'Persönliches Coaching':'Spirituelle Begleitung';
@@ -60,8 +62,6 @@ const bc=service?[{name:'Startseite',href:'/de/'},{name:'Angebote',href:'/de/ang
 <section class="section section-warm"><div class="shell contact-page-grid"><div class="contact-page-primary"><span class="overline">Direkter Kontakt</span><h2>Ich freue mich auf Ihre Nachricht.</h2><p>Schreiben Sie mir über WhatsApp, wenn Sie Fragen zu einem Angebot oder zu einem möglichen Termin haben.</p><a href={wa('einem Termin')} target="_blank" rel="noopener noreferrer" class="button button-gold">WhatsApp öffnen ↗</a></div><div class="contact-page-secondary"><span class="overline">Kontaktmöglichkeiten</span><a href={'tel:+'+site.phone}>{site.phoneDisplay}</a><a href={'mailto:'+site.email}>{site.email}</a><SocialLinks label={'Soziale Medien'}/></div></div></section>
 </Fragment>}
 {kind==='detail'&&service&&<Fragment>
-<section class="detail-hero"><div class="shell detail-content-wrap"><a href="/de/angebote/" class="backlink">← Alle Angebote</a><span class="overline">{serviceLabel}</span><h1>{service.title}</h1><p class="detail-summary">{service.short}</p><a class="button button-gold" href={wa(service.title)} target="_blank" rel="noopener noreferrer">Informationen anfragen ↗</a></div></section>
-<section class="detail-body-section"><div class="shell detail-content-wrap"><div class="detail-article"><div class="detail-article-label"><span class="overline">Zum Gespräch</span><h2>Was wir besprechen können</h2></div><div class="detail-article-copy"><p>{service.description}</p><p>Ablauf, Dauer und Konditionen vereinbaren wir vorab im persönlichen Kontakt.</p></div></div><div class="detail-topics-row" aria-label="Gesprächsthemen">{service.topics.map(t=><span>{t}</span>)}</div></div></section>
-<div class="detail-disclaimer-section"><div class="shell detail-content-wrap"><p>Die Angebote ersetzen keine medizinische, psychotherapeutische, rechtliche oder finanzielle Beratung. Spirituelle Deutungen enthalten keine garantierten Aussagen über die Zukunft.</p></div></div>
+  <ServiceDetail service={service} lang="de" isCoaching={isCoaching} />
 </Fragment>}
 </Base>
