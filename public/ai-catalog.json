@@ -1,13 +1,274 @@
 {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
   "name": "Neşe Alkaya",
-  "language": "tr-TR",
-  "url": "https://nese-alkaya.pages.dev",
-  "description": "Yaşam koçluğu ve manevi rehberlik",
-  "sections": [
-    "/hakkimda/",
-    "/hizmetler/",
-    "/icerikler/",
-    "/iletisim/"
+  "url": "https://nesealkaya.com",
+  "inLanguage": [
+    "tr-TR",
+    "de-DE"
   ],
-  "disclaimer": "Geleneksel ve sezgisel yorumlar tıbbi, hukuki veya finansal danışmanlık değildir."
+  "about": [
+    "Personal coaching",
+    "Life coaching",
+    "Spirituelle Begleitung",
+    "Manevi rehberlik"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+49 174 154 3720",
+    "email": "info@nesealkaya.com",
+    "contactType": "consultation inquiry",
+    "availableLanguage": [
+      "Turkish",
+      "German"
+    ]
+  },
+  "languages": {
+    "tr-TR": "https://nesealkaya.com/",
+    "de-DE": "https://nesealkaya.com/de/"
+  },
+  "pages": [
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/",
+      "alternate": "https://nesealkaya.com/de/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/",
+      "alternate": "https://nesealkaya.com/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hakkimda/",
+      "alternate": "https://nesealkaya.com/de/ueber-mich/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/ueber-mich/",
+      "alternate": "https://nesealkaya.com/hakkimda/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/",
+      "alternate": "https://nesealkaya.com/de/angebote/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/",
+      "alternate": "https://nesealkaya.com/hizmetler/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/icerikler/",
+      "alternate": "https://nesealkaya.com/de/einblicke/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/einblicke/",
+      "alternate": "https://nesealkaya.com/icerikler/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/iletisim/",
+      "alternate": "https://nesealkaya.com/de/kontakt/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/kontakt/",
+      "alternate": "https://nesealkaya.com/iletisim/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/yasam-koclugu/",
+      "alternate": "https://nesealkaya.com/de/angebote/einzelcoaching/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/einzelcoaching/",
+      "alternate": "https://nesealkaya.com/hizmetler/yasam-koclugu/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/yon-bulma-karar-netligi/",
+      "alternate": "https://nesealkaya.com/de/angebote/orientierung-und-entscheidungen/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/orientierung-und-entscheidungen/",
+      "alternate": "https://nesealkaya.com/hizmetler/yon-bulma-karar-netligi/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/stres-kaygi-duygusal-denge/",
+      "alternate": "https://nesealkaya.com/de/angebote/stress-und-innere-balance/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/stress-und-innere-balance/",
+      "alternate": "https://nesealkaya.com/hizmetler/stres-kaygi-duygusal-denge/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/ozguven-sinirlar-iliskiler/",
+      "alternate": "https://nesealkaya.com/de/angebote/selbstvertrauen-grenzen-beziehungen/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/selbstvertrauen-grenzen-beziehungen/",
+      "alternate": "https://nesealkaya.com/hizmetler/ozguven-sinirlar-iliskiler/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/kisisel-donusum-yeni-baslangiclar/",
+      "alternate": "https://nesealkaya.com/de/angebote/veraenderung-und-neuanfang/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/veraenderung-und-neuanfang/",
+      "alternate": "https://nesealkaya.com/hizmetler/kisisel-donusum-yeni-baslangiclar/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/ruhsal-rehberlik-icsel-farkindalik/",
+      "alternate": "https://nesealkaya.com/de/angebote/spirituelle-begleitung-und-achtsamkeit/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/spirituelle-begleitung-und-achtsamkeit/",
+      "alternate": "https://nesealkaya.com/hizmetler/ruhsal-rehberlik-icsel-farkindalik/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/kisa-sureli-destek-odak-seansi/",
+      "alternate": "https://nesealkaya.com/de/angebote/fokussitzung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/fokussitzung/",
+      "alternate": "https://nesealkaya.com/hizmetler/kisa-sureli-destek-odak-seansi/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/surecli-yol-arkadasligi/",
+      "alternate": "https://nesealkaya.com/de/angebote/begleitung-ueber-mehrere-termine/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/begleitung-ueber-mehrere-termine/",
+      "alternate": "https://nesealkaya.com/hizmetler/surecli-yol-arkadasligi/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/duru-goru/",
+      "alternate": "https://nesealkaya.com/de/angebote/intuitive-wahrnehmung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/intuitive-wahrnehmung/",
+      "alternate": "https://nesealkaya.com/hizmetler/duru-goru/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/ruya-yorumlama/",
+      "alternate": "https://nesealkaya.com/de/angebote/traumdeutung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/traumdeutung/",
+      "alternate": "https://nesealkaya.com/hizmetler/ruya-yorumlama/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/tuz-bakimi/",
+      "alternate": "https://nesealkaya.com/de/angebote/salzdeutung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/salzdeutung/",
+      "alternate": "https://nesealkaya.com/hizmetler/tuz-bakimi/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/yildizname/",
+      "alternate": "https://nesealkaya.com/de/angebote/traditionelle-sterndeutung/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/traditionelle-sterndeutung/",
+      "alternate": "https://nesealkaya.com/hizmetler/yildizname/"
+    },
+    {
+      "language": "tr-TR",
+      "url": "https://nesealkaya.com/hizmetler/bioenerji-ve-reiki/",
+      "alternate": "https://nesealkaya.com/de/angebote/reiki-und-energiearbeit/"
+    },
+    {
+      "language": "de-DE",
+      "url": "https://nesealkaya.com/de/angebote/reiki-und-energiearbeit/",
+      "alternate": "https://nesealkaya.com/hizmetler/bioenerji-ve-reiki/"
+    }
+  ],
+  "services": {
+    "coaching": [
+      {
+        "tr": "https://nesealkaya.com/hizmetler/yasam-koclugu/",
+        "de": "https://nesealkaya.com/de/angebote/einzelcoaching/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/yon-bulma-karar-netligi/",
+        "de": "https://nesealkaya.com/de/angebote/orientierung-und-entscheidungen/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/stres-kaygi-duygusal-denge/",
+        "de": "https://nesealkaya.com/de/angebote/stress-und-innere-balance/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/ozguven-sinirlar-iliskiler/",
+        "de": "https://nesealkaya.com/de/angebote/selbstvertrauen-grenzen-beziehungen/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/kisisel-donusum-yeni-baslangiclar/",
+        "de": "https://nesealkaya.com/de/angebote/veraenderung-und-neuanfang/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/ruhsal-rehberlik-icsel-farkindalik/",
+        "de": "https://nesealkaya.com/de/angebote/spirituelle-begleitung-und-achtsamkeit/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/kisa-sureli-destek-odak-seansi/",
+        "de": "https://nesealkaya.com/de/angebote/fokussitzung/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/surecli-yol-arkadasligi/",
+        "de": "https://nesealkaya.com/de/angebote/begleitung-ueber-mehrere-termine/"
+      }
+    ],
+    "spiritual": [
+      {
+        "tr": "https://nesealkaya.com/hizmetler/duru-goru/",
+        "de": "https://nesealkaya.com/de/angebote/intuitive-wahrnehmung/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/ruya-yorumlama/",
+        "de": "https://nesealkaya.com/de/angebote/traumdeutung/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/tuz-bakimi/",
+        "de": "https://nesealkaya.com/de/angebote/salzdeutung/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/yildizname/",
+        "de": "https://nesealkaya.com/de/angebote/traditionelle-sterndeutung/"
+      },
+      {
+        "tr": "https://nesealkaya.com/hizmetler/bioenerji-ve-reiki/",
+        "de": "https://nesealkaya.com/de/angebote/reiki-und-energiearbeit/"
+      }
+    ]
+  },
+  "disclaimer": {
+    "tr": "Koçluk psikoterapi ya da tıbbi tedavi değildir. Manevi yorumlar kesin sonuç garantisi içermez.",
+    "de": "Coaching ist keine Psychotherapie. Spirituelle Deutungen sind keine medizinische Behandlung und enthalten keine garantierten Prognosen."
+  }
 }

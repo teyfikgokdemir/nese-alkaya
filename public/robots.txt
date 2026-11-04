@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://nese-alkaya.pages.dev/sitemap.xml
+
+Sitemap: https://nesealkaya.com/sitemap.xml

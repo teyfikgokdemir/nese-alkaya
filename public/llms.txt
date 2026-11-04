@@ -1,10 +1,19 @@
-# Neşe Alkaya
-> Resmi web sitesi. Yaşam koçluğu, kişisel farkındalık, manevi rehberlik ve geleneksel yorumlama uygulamaları.
+# Neşe Alkaya — Offizielle Website / Resmî Web Sitesi
+> Persönliches Coaching und unabhängige spirituelle Begleitung / Yaşam koçluğu ve ayrı sunulan manevi rehberlik.
 
-- [Ana sayfa](https://nese-alkaya.pages.dev/)
-- [Neşe Hakkında](https://nese-alkaya.pages.dev/hakkimda/)
-- [Hizmetler](https://nese-alkaya.pages.dev/hizmetler/)
-- [İçerikler](https://nese-alkaya.pages.dev/icerikler/)
-- [İletişim](https://nese-alkaya.pages.dev/iletisim/)
+- Hauptadresse / Ana adres: https://nesealkaya.com/
+- Sprachen / Diller: Türkçe (tr-TR), Deutsch (de-DE)
+- [Türkçe ana sayfa](https://nesealkaya.com/)
+- [Deutsch: Startseite](https://nesealkaya.com/de/)
+- [Hakkımda](https://nesealkaya.com/hakkimda/)
+- [Über mich](https://nesealkaya.com/de/ueber-mich/)
+- [Hizmetler](https://nesealkaya.com/hizmetler/)
+- [Angebote](https://nesealkaya.com/de/angebote/)
+- [İletişim](https://nesealkaya.com/iletisim/)
+- [Kontakt](https://nesealkaya.com/de/kontakt/)
+- [Tam açıklamalar / Ausführliche Informationen](https://nesealkaya.com/llms-full.txt)
+- [Yapılandırılmış hizmet kataloğu / Service-Daten](https://nesealkaya.com/ai-catalog.json)
 
-Not: Manevi ve sezgisel yorumlar bilimsel teşhis, tedavi, kesin gelecek öngörüsü, hukuki veya finansal danışmanlık değildir.
+Persönliche Beratung und traditionelle Deutungen sind getrennte Angebote. Keine Heilsversprechen oder garantierten Zukunftsaussagen. Coaching ist keine Psychotherapie. / Koçluk psikoterapi değildir; manevi yorumlar kesin gelecek bilgisi ya da tedavi vaadi değildir.
+
+Kontakt: info@nesealkaya.com | +49 174 154 3720
