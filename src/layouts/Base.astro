@@ -26,7 +26,8 @@ const graph=[
  ...(service?[{'@type':'Service',name:service.title,description:service.short,provider:{'@id':personId},url:canonical,serviceType:isDe?'Persönliches Gespräch':'Bireysel görüşme'}]:[]),
  ...(faqItems.length?[{'@type':'FAQPage',mainEntity:faqItems.map(item=>({'@type':'Question',name:item.q,acceptedAnswer:{'@type':'Answer',text:item.a}}))}]:[]),
  ...(crumbs.length?[{'@type':'BreadcrumbList','@id':canonical+'#breadcrumb',itemListElement:crumbs.map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,item:new URL(c.href,site.url).href}))}]:[]),
- ...(article?[{'@type':'BlogPosting','@id':canonical+'#article',headline:article.title,description:article.excerpt,inLanguage:isDe?'de-DE':'tr-TR',datePublished:article.date,dateModified:article.date,mainEntityOfPage:{'@id':canonical+'#webpage'},author:{'@id':personId},publisher:{'@id':personId},articleSection:article.category,wordCount:article.wordCount||[article.intro,...article.sections.flatMap(s=>s.paragraphs)].join(' ').split(/\\s+/).length,about:article.category,isAccessibleForFree:true,url:canonical}]:[])
+ ...(!article && ['/blog/','/de/blog/'].includes(path)?[{'@type':'Blog','@id':canonical+'#blog',name:isDe?'Neşe Alkaya – Blog & Gedanken':'Neşe Alkaya – Blog & Yazılar',url:canonical,inLanguage:isDe?'de-DE':'tr-TR',publisher:{'@id':personId}}]:[]),
+ ...(article?[{'@type':'BlogPosting','@id':canonical+'#article',headline:article.title,description:article.excerpt,inLanguage:isDe?'de-DE':'tr-TR',datePublished:article.date,dateModified:article.date,mainEntityOfPage:{'@id':canonical+'#webpage'},author:{'@id':personId},publisher:{'@id':personId},articleSection:article.category,wordCount:article.wordCount||[article.intro,...article.sections.flatMap(s=>s.paragraphs)].join(' ').split(/\s+/u).length,about:article.category,isAccessibleForFree:true,url:canonical}]:[])
 ];
 ---
 <!doctype html>
