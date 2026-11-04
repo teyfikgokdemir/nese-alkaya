@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && npm run verify",
+    "build": "npm run og:generate && astro build && npm run verify",
     "preview": "astro preview",
     "verify": "node scripts/verify-build.mjs",
     "indexnow:check": "node scripts/submit-indexnow.mjs",
-    "indexnow:submit": "node scripts/submit-indexnow.mjs --submit"
+    "indexnow:submit": "node scripts/submit-indexnow.mjs --submit",
+    "og:generate": "node scripts/generate-og.mjs"
   },
   "dependencies": {
-    "astro": "^5.16.0"
+    "astro": "^5.16.0",
+    "sharp": "0.35.5"
   }
 }

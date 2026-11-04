@@ -41,6 +41,7 @@ for(const urlPath of paths){
  check((html.match(/<h1(?:\s|>)/g)||[]).length===1,'Wrong H1 count: '+urlPath);
  check(html.includes('name="description"'),'Meta description missing: '+urlPath);
  check(html.includes('href="/.well-known/ard.json"'),'ARD discovery missing: '+urlPath);
+ check(html.includes('content="https://nese-alkaya.pages.dev/og/nese-alkaya-'+(german?'de':'tr')+'.jpg"'),'OG image missing/wrong language: '+urlPath);
  check(!/<div[^>]*class="scroll-controls"[^>]*aria-label/.test(html),'Invalid aria on floating wrapper: '+urlPath);
  const schema=html.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/);
  if(!schema)check(false,'Missing JSON-LD: '+urlPath);
@@ -72,6 +73,14 @@ for(const file of ['robots.txt','sitemap.xml','llms.txt','llms-full.txt','llms-t
 }
 for(const name of ['.well-known/ard.json','.well-known/ai-catalog.json']){
  try{const j=JSON.parse(read(path.join(dist,name)));check(j.specVersion==='1.0'&&j.entries.length>0,'ARD schema basics: '+name)}catch(e){check(false,'Invalid ARD: '+name)}
+}
+for(const lang of ['tr','de']){
+ const file=path.join(dist,'og','nese-alkaya-'+lang+'.jpg');
+ check(fs.existsSync(file),'Missing OG JPG for '+lang);
+ if(fs.existsSync(file)){
+  const bytes=fs.readFileSync(file);
+  check(bytes[0]===0xff&&bytes[1]===0xd8&&bytes.byteLength>30000&&bytes.byteLength<850000,'Invalid OG JPEG for '+lang);
+ }
 }
 check(read(path.join(dist,'_headers')).includes('Content-Security-Policy:'),'CSP missing');
 console.log(JSON.stringify({generatedPages:tested,blogArticles:articles,linksChecked:links,failures:failures.length},null,2));

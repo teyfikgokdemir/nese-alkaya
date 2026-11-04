@@ -5,6 +5,8 @@ import '../styles/global.css';
 import SocialLinks from '../components/SocialLinks.astro';
 const {title=site.name,description=site.description,path=Astro.url.pathname,crumbs=[],lang='tr',service=null,faqItems=[],article=null}=Astro.props;
 const isDe=lang==='de';
+// Public and crawlable now; swap to the canonical host only once the custom domain is active.
+const ogImageUrl='https://nese-alkaya.pages.dev/og/nese-alkaya-'+(isDe?'de':'tr')+'.jpg';
 const canonical=new URL(path,site.url).href;
 const localPath=isDe?(trPathMap[path]||'/'):(dePathMap[path]||'/de/');
 const alternate=new URL(localPath,site.url).href;
@@ -50,11 +52,16 @@ const graph=[
 <meta property="og:title" content={displayTitle}>
 <meta property="og:description" content={description}>
 <meta property="og:url" content={canonical}>
-<meta property="og:image" content={new URL('/nese-alkaya-portrait-2x.webp',site.url).href}>
-<meta property="og:image:alt" content={isDe?'Porträt von Neşe Alkaya':'Neşe Alkaya portresi'}>
+<meta property="og:image" content={ogImageUrl}>
+<meta property="og:image:secure_url" content={ogImageUrl}>
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content={isDe?'Neşe Alkaya – Achtsamkeit, Begleitung und Wandel':'Neşe Alkaya – Farkındalık, Rehberlik ve Dönüşüm'}>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content={displayTitle}><meta name="twitter:description" content={description}>
-<meta name="twitter:image" content={new URL('/nese-alkaya-portrait-2x.webp',site.url).href}>
+<meta name="twitter:image" content={ogImageUrl}>
+<meta name="twitter:image:alt" content={isDe?'Neşe Alkaya – Achtsamkeit, Begleitung und Wandel':'Neşe Alkaya – Farkındalık, Rehberlik ve Dönüşüm'}>
 <meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@graph':graph})}/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
