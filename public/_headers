@@ -12,3 +12,7 @@
 # Lighthouse/ARD legacy well-known discovery endpoint.
 /.well-known/ai-catalog.json
   Content-Type: application/json; charset=utf-8
+
+# ARD v0.91 discovery path; predecessor remains available.
+/.well-known/ard.json
+  Content-Type: application/json; charset=utf-8
