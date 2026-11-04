@@ -6,7 +6,7 @@ import SocialLinks from '../components/SocialLinks.astro';
 const {title=site.name,description=site.description,path=Astro.url.pathname,crumbs=[],lang='tr',service=null,faqItems=[],article=null}=Astro.props;
 const isDe=lang==='de';
 // Public and crawlable now; swap to the canonical host only once the custom domain is active.
-const ogImageUrl='https://nese-alkaya.pages.dev/og/nese-alkaya-'+(isDe?'de':'tr')+'.jpg';
+const ogImageUrl='https://nese-alkaya.pages.dev/og/nese-alkaya-portre-'+(isDe?'de':'tr')+'.jpg';
 const canonical=new URL(path,site.url).href;
 const localPath=isDe?(trPathMap[path]||'/'):(dePathMap[path]||'/de/');
 const alternate=new URL(localPath,site.url).href;
