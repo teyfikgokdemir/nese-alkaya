@@ -38,3 +38,8 @@ Bu otomatik kalite kapısı tasarım, içerik, Astro ana sürümü ve DNS kayıt
 - `npm run indexnow:check` çevrimdışı 54 canonical URL ve anahtar dosyasını kontrol eder, hiçbir HTTP isteği göndermez.
 - **Yalnızca alan adı ve HTTPS canlıya alındığında**, `npm run indexnow:submit` önce gerçek domain üzerinden anahtarı doğrular, ardından IndexNow'a bildirir.
 - 200/202 yanıtları bildirim alındı demektir, indeksleme garantisi değildir.
+
+## Dönüşüm olayları (kurulum hazırlığı)
+- WhatsApp, telefon ve e-posta bağlantılarına tıklanınca tarayıcı içinde `nese:contact-intent` CustomEvent gönderilir.
+- Veri alanları: `event`, `contact_method`, `page_path`, `page_language`. Telefon numarası, e-posta adresi veya mesaj gövdesi aktarılmaz.
+- Bu mekanizma **ölçüm hizmeti değildir**: dış bağlantı, cookie, GA4 kimliği veya Cloudflare Web Analytics etiketi eklenmedi. Gerçek analitik entegrasyonu için hizmet kimliği, veri politikası ve gerekli yasal kontroller hâlâ gerekir.

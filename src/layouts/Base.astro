@@ -121,6 +121,19 @@ const onPageScroll=()=>{
 window.addEventListener('scroll',onPageScroll,{passive:true});
 window.addEventListener('pagehide',()=>window.clearTimeout(scrollHideTimer),{once:true});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)hideControls()});
+// Privacy-preserving conversion hooks: local only, no network requests.
+// Analytics adapter can subscribe to "nese:contact-intent" after legal review.
+document.addEventListener('click',(event)=>{
+ const anchor=event.target instanceof Element?event.target.closest('a[href]'):null;
+ if(!anchor)return;
+ const href=anchor.getAttribute('href')||'';
+ const channel=/^https:\/\/wa\.me\//i.test(href)?'whatsapp':href.startsWith('tel:')?'phone':href.startsWith('mailto:')?'email':null;
+ if(!channel)return;
+ const payload={event:'nese_contact_intent',contact_method:channel,page_path:window.location.pathname,page_language:document.documentElement.lang};
+ document.dispatchEvent(new CustomEvent('nese:contact-intent',{detail:payload}));
+ // Do not create an analytics dataLayer or transmit personal data until approved.
+});
+
 backToTop?.addEventListener('click',()=>{
  window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
  hideControls();
