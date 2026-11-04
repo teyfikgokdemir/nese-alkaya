@@ -69,3 +69,28 @@ Türkçe: Fiyat, süre ve randevu uygunluğu için doğrudan görüşme gerekir.
 - [Language overview](https://nesealkaya.com/llms.txt)
 - [Deutsch kompakt](https://nesealkaya.com/llms-de.txt)
 - [Türkçe özet](https://nesealkaya.com/llms-tr.txt)
+
+
+## Blog · Eight in-depth Turkish articles
+- [Türkçe Blog](https://nesealkaya.com/blog/)
+- [Yaşam koçluğu nedir, ne değildir? Görüşmeye başlamadan önce](https://nesealkaya.com/blog/yasam-koclugu-nedir-ne-degildir/) — Bireysel koçluğun amacı, sınırları ve bir görüşmeye hazırlanırken bilmeniz gerekenler.
+- [Karar verirken netlik kazanmak: Kendi sesinizi duymanın yolları](https://nesealkaya.com/blog/karar-verirken-netlik-kazanmak/) — Seçenekler arasında sıkıştığınızda önceliklerinizi ve bir sonraki adımı nasıl belirleyebilirsiniz?
+- [İlişkilerde sınır koymak: Hayır demek neden sevgisizlik değildir?](https://nesealkaya.com/blog/iliskilerde-sinir-koymak/) — Suçluluk, açık iletişim ve kişisel alanı korumak üzerine dengeli bir yaklaşım.
+- [Günlük stres ve duygusal farkındalık: Daha sakin bir ritim mümkün mü?](https://nesealkaya.com/blog/gunluk-stres-ve-duygusal-farkindalik/) — Yoğunluk karşısında kendi sınırlarınızı, ihtiyaçlarınızı ve destek kaynaklarınızı fark edin.
+- [Yeni başlangıçlar: Hayatınızda değişime hazırlanırken nelere bakmalısınız?](https://nesealkaya.com/blog/yeni-baslangiclara-hazirlanmak/) — Değişim dönemlerinde beklentileri düzenlemek, alışkanlıkları gözden geçirmek ve küçük adımlar seçmek.
+- [Tek görüşme mi, süreçli koçluk mu? İhtiyacınıza uygun görüşme biçimi](https://nesealkaya.com/blog/tek-gorusme-mi-surecli-kocluk-mu/) — Odak seansı ile birden fazla görüşmeye yayılan yol arkadaşlığı arasındaki farklar.
+- [Alevi-Bektaşi geleneğinde yol, saygı ve manevi rehberlik üzerine](https://nesealkaya.com/blog/alevi-bektasi-geleneginde-yol-ve-insana-saygi/) — Yol kavramına, insana saygıya ve manevi rehberlikle kişisel farkındalığın birbirinden ayrı konumuna dikkatli bir bakış.
+- [Rüyalar ve semboller: Geleneksel yorumlama ile kişisel anlam arasındaki fark](https://nesealkaya.com/blog/ruyalar-ve-sembolleri-anlamlandirmak/) — Rüya anlatılarını kişisel çağrışımlar, kültürel semboller ve gerçekçi beklentilerle ele almak.
+
+## Journal · Acht ausführliche Beiträge auf Deutsch
+- [Deutsch Blog](https://nesealkaya.com/de/blog/)
+- [Was ist persönliches Coaching – und wo liegen seine Grenzen?](https://nesealkaya.com/de/blog/was-ist-persoenliches-coaching/) — Was in einem Coaching-Gespräch Raum finden kann, wie Sie sich vorbereiten und was Coaching nicht ersetzt.
+- [Entscheidungen mit mehr Klarheit treffen: Den eigenen Maßstab finden](https://nesealkaya.com/de/blog/entscheidungen-mit-mehr-klarheit-treffen/) — Wie Sie schwierige Optionen sortieren, persönliche Werte einbeziehen und kleine nächste Schritte erkennen.
+- [Grenzen setzen in Beziehungen: Ein Nein ist kein Zeichen fehlender Zuneigung](https://nesealkaya.com/de/blog/grenzen-setzen-in-beziehungen/) — Wie persönliche Bedürfnisse ausgesprochen werden können, ohne Respekt und Nähe aus dem Blick zu verlieren.
+- [Alltagsstress und emotionale Achtsamkeit: Einen eigenen Rhythmus finden](https://nesealkaya.com/de/blog/alltagsstress-und-emotionale-achtsamkeit/) — Belastungen genauer wahrnehmen, Gefühle benennen und passende Routinen für den Alltag überlegen.
+- [Neuanfang und Veränderung: Mit realistischen Schritten weitergehen](https://nesealkaya.com/de/blog/neuanfang-und-veraenderung-gestalten/) — Warum neue Lebensphasen kein vollständiges Umkrempeln verlangen und wie kleine Schritte Orientierung geben können.
+- [Einzeltermin oder längere Begleitung: Welches Gespräch passt zu meinem Anliegen?](https://nesealkaya.com/de/blog/einzeltermin-oder-laengere-begleitung/) — Was eine Fokussitzung von einer Begleitung über mehrere Termine unterscheidet.
+- [Alevitische Tradition: Über den Weg, Respekt und spirituelle Begleitung](https://nesealkaya.com/de/blog/alevitische-tradition-weg-respekt-begleitung/) — Ein differenzierter Blick auf den Begriff des Weges, persönliche Verantwortung und die Grenzen spiritueller Gespräche.
+- [Träume und Symbole verstehen: Traditionelle Deutung und persönliche Bedeutung](https://nesealkaya.com/de/blog/traeume-und-symbole-verstehen/) — Warum Bilder aus Träumen unterschiedliche Bedeutungen haben können und welche Grenzen traditionelle Deutungen besitzen.
+
+Each article has its own canonical URL, reciprocal Turkish/German hreflang links, navigable headings, and a BlogPosting structured data record. Articles are informational and do not provide clinical diagnoses, guaranteed results or medical treatment. Blog contents and AI discovery documents do not guarantee inclusion or citation by third-party AI systems.

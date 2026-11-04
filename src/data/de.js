@@ -187,6 +187,14 @@ export const deTopics=[
   }
 ];
 export const dePathMap={"/":"/de/","/hakkimda/":"/de/ueber-mich/","/hizmetler/":"/de/angebote/","/icerikler/":"/de/einblicke/","/iletisim/":"/de/kontakt/"};
+dePathMap['/blog/']='/de/blog/';
 for(const s of deServices)dePathMap['/hizmetler/'+s.tr+'/']='/de/angebote/'+s.slug+'/';
 export const trPathMap=Object.fromEntries(Object.entries(dePathMap).map(([tr,de])=>[de,tr]));
 export const deSiteDescription='Neşe Alkaya begleitet Menschen mit persönlichem Coaching, Gesprächen zur Orientierung und eigenständigen spirituellen Angeboten. Informationen zu Ablauf und Kontakt.';
+
+// Redaktionelle Blogpaare mit wechselseitigen Sprachalternativen.
+import {blogTR} from './blog-tr.js';
+import {blogDE} from './blog-de.js';
+for(let i=0;i<blogTR.length;i++){if(blogDE[i]&&blogDE[i].tr===blogTR[i].slug)dePathMap['/blog/'+blogTR[i].slug+'/']='/de/blog/'+blogDE[i].slug+'/';}
+// Map is updated after declaration; the static reverse mapping must include blog routes too.
+for(const [tr,de] of Object.entries(dePathMap))trPathMap[de]=tr;
