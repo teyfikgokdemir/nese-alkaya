@@ -14,10 +14,10 @@ const graph=[
 <html lang="tr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#193e35"><meta name="description" content={description}>
+<meta name="theme-color" content="#183A32"><meta name="description" content={description}>
 <title>{title} | Neşe Alkaya</title><link rel="canonical" href={canonical}>
 <meta property="og:type" content="website"><meta property="og:locale" content="tr_TR"><meta property="og:title" content={title+' | Neşe Alkaya'}><meta property="og:description" content={description}><meta property="og:url" content={canonical}>
-<meta name="twitter:card" content="summary"><meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content={title+" | Neşe Alkaya"}><meta name="twitter:description" content={description}><meta name="robots" content="index,follow,max-image-preview:large">
 <script type="application/ld+json" set:html={JSON.stringify({'@context':'https://schema.org','@graph':graph})}/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
@@ -25,7 +25,7 @@ const graph=[
 <a class="skip-link" href="#main">İçeriğe geç</a>
 <header class="site-header"><div class="shell nav-wrap">
 <a href="/" class="brand" aria-label="Neşe Alkaya ana sayfa">NEŞE <span>ALKAYA</span><small>Farkındalık · Rehberlik · Dönüşüm</small></a>
-<nav aria-label="Ana menü" id="main-nav"><a href="/">Ana Sayfa</a><a href="/hakkimda/">Hakkımda</a><a href="/hizmetler/">Hizmetler</a><a href="/icerikler/">İçerikler</a><a href="/iletisim/">İletişim</a></nav>
+<nav aria-label="Ana menü" id="main-nav"><a href="/" aria-current={Astro.url.pathname==='/'?'page':undefined}>Ana Sayfa</a><a href="/hakkimda/" aria-current={Astro.url.pathname==='/hakkimda/'?'page':undefined}>Hakkımda</a><a href="/hizmetler/" aria-current={Astro.url.pathname.startsWith('/hizmetler/')?'page':undefined}>Hizmetler</a><a href="/icerikler/" aria-current={Astro.url.pathname==='/icerikler/'?'page':undefined}>İçerikler</a><a href="/iletisim/" aria-current={Astro.url.pathname==='/iletisim/'?'page':undefined}>İletişim</a></nav>
 <a class="nav-action" href={wa} target="_blank" rel="noopener noreferrer">Görüşme Planla <span aria-hidden="true">↗</span></a>
 <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Menüyü aç">☰</button>
 </div></header>

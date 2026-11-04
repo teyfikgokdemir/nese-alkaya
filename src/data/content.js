@@ -1,9 +1,9 @@
 export const site = {
   name: 'Neşe Alkaya',
   url: 'https://nese-alkaya.pages.dev',
-  phone: '905364423793',
-  phoneDisplay: '0536 442 37 93',
-  email: 'nesealkaya58@gmail.com',
+  phone: '491741543720',
+  phoneDisplay: '+49 174 154 3720',
+  email: 'info@nesealkaya.com',
   description: 'Neşe Alkaya ile yaşam koçluğu, kişisel farkındalık, manevi rehberlik ve geleneksel yorumlama üzerine bireysel görüşmeler.',
   socials: [
     {label:'Instagram',href:'https://www.instagram.com/nese__alkaya/'},
