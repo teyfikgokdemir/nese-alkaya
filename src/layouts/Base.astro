@@ -30,6 +30,13 @@ const graph=[
 <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Menüyü aç">☰</button>
 </div></header>
 <main id="main"><slot /></main>
+<section class="contact-ribbon" aria-label="Hızlı iletişim">
+  <div class="shell contact-ribbon-inner">
+    <div class="contact-ribbon-item"><span>WhatsApp</span><a href={wa} target="_blank" rel="noopener noreferrer">{site.phoneDisplay} <span aria-hidden="true">↗</span></a></div>
+    <div class="contact-ribbon-item"><span>E-posta</span><a href={'mailto:'+site.email}>{site.email} <span aria-hidden="true">↗</span></a></div>
+    <div class="contact-ribbon-item contact-ribbon-social"><span>Sosyal medya</span><div>{site.socials.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>{s.label} ↗</a>)}</div></div>
+  </div>
+</section>
 <footer class="site-footer"><div class="shell">
 <div class="footer-grid"><div><a href="/" class="footer-brand">NEŞE ALKAYA</a><p>Bir adım geri çekilip kendi yolunuza daha yakından bakabileceğiniz bir alan.</p></div>
 <div><h3>Keşfedin</h3><a href="/hakkimda/">Neşe Hakkında</a><a href="/hizmetler/">Hizmetler</a><a href="/icerikler/">İçerikler</a><a href="/iletisim/">İletişim</a></div>
