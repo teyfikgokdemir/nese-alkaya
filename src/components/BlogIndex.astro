@@ -14,10 +14,10 @@ const de=lang==='de',posts=de?blogDE:blogTR,prefix=de?'/de/blog/':'/blog/';
  </div></section>
 <section class="blog-directory section-space"><div class="shell">
  <div class="blog-collection-heading"><span class="overline">{de?'AUSGEWÄHLTE ARTIKEL':'SEÇİLMİŞ YAZILAR'}</span><p>{de?'Acht Themen · In Ruhe lesen':'Sekiz konu · Kendinize zaman ayırın'}</p></div>
- <div class="blog-card-grid">{posts.map((post,i)=><a class:list={['blog-card',{'blog-card-featured':i===0}]} href={prefix+post.slug+'/'} aria-label={post.title}>
+ <div class="blog-card-grid">{posts.map((post,i)=><a class:list={['blog-card',{'blog-card-featured':i===0||i===5,'blog-card-heritage':i===3||i===7}]} href={prefix+post.slug+'/'} aria-label={post.title}>
  <div class="blog-card-top"><span class="overline">{post.category}</span><span aria-hidden="true" class="blog-card-arrow">↗</span></div>
- <h2>{post.title}</h2><p>{post.excerpt}</p>
- <div class="blog-card-bottom"><span>{de?'Leben & Reflexion':'Yaşam & Farkındalık'}</span><span>{de?'Artikel lesen':'Yazıyı oku'} <span aria-hidden="true">↗</span></span></div>
+ <div class="blog-card-body"><h2>{post.title}</h2><p>{post.excerpt}</p></div>
+ <div class="blog-card-bottom"><span>{de?'Perspektiven & Orientierung':'Farkındalık & Rehberlik'}</span><span class="blog-card-read">{de?'Artikel lesen':'Yazıyı keşfet'} <span aria-hidden="true">↗</span></span></div>
  </a>)}</div>
  <div class="blog-directory-note"><span aria-hidden="true">✦</span><p>{de?'Die Texte dienen der allgemeinen Information und Reflexion. Coaching ist keine Psychotherapie; spirituelle Deutungen ersetzen keine medizinische Behandlung.':'Yazılar genel bilgilendirme ve kişisel farkındalık amaçlıdır. Yaşam koçluğu psikoterapi değildir; manevi yorumlar tedavi ya da kesin gelecek bilgisi sunmaz.'}</p></div>
  </div></section>
