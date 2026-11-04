@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {blogTR} from '../src/data/blog-tr.js';
 import {blogDE} from '../src/data/blog-de.js';
-import {dePathMap,trPathMap} from '../src/data/de.js';
+import {dePathMap,trPathMap,deServices} from '../src/data/de.js';
+import {services} from '../src/data/content.js';
+import {expandedServiceCopy} from '../src/data/service-expanded.js';
 const dist=path.resolve('dist');
 const origin='https://nesealkaya.com';
 const failures=[];
@@ -17,8 +19,20 @@ check(paths.length===54,'Expected 54 site URLs');
 check(sitemapUrls.length===54,'Expected 54 sitemap URLs');
 check(new Set(sitemapUrls).size===54,'Duplicated sitemap URLs');
 check(blogTR.length===8&&blogDE.length===8,'Blog language count invalid');
+check(services.length===13&&deServices.length===13,'Service language count invalid');
+for(const service of services){
+ const item=expandedServiceCopy[service.slug];
+ check(Boolean(item),'Missing expanded copy '+service.slug);
+ for(const lang of ['tr','de']){
+  const entry=item?.[lang];
+  check(Boolean(entry?.headline&&entry?.context&&entry?.approach&&entry?.takeaway),'Missing service sections '+lang+'/'+service.slug);
+  check(entry?.situations?.length===3,'Expected three service prompts '+lang+'/'+service.slug);
+  check(entry?.faq?.length===2,'Expected two service FAQs '+lang+'/'+service.slug);
+ }
+ check(deServices.some(x=>x.tr===service.slug),'Missing German service '+service.slug);
+}
 blogTR.forEach((p,i)=>check(blogDE[i]?.tr===p.slug,'Blog language pair mismatch: '+p.slug));
-let tested=0,articles=0,links=0;
+let tested=0,articles=0,links=0,servicePages=0;
 const link=(html,rel,lang)=>{
  const tags=html.match(/<link\b[^>]*>/g)||[];
  const tag=tags.find(t=>t.includes('rel="'+rel+'"')&&(!lang||t.includes('hreflang="'+lang+'"')));
@@ -49,11 +63,25 @@ for(const urlPath of paths){
   try{
    const nodes=JSON.parse(schema[1])['@graph']||[];
    check(nodes.some(x=>x['@type']==='WebPage'),'WebPage schema missing: '+urlPath);
+   if(/^\/(?:hizmetler|de\/angebote)\/[^/]+\/$/.test(urlPath)){
+    check(nodes.some(x=>x['@type']==='Service'),'Service schema missing: '+urlPath);
+    check(nodes.some(x=>x['@type']==='FAQPage'&&x.mainEntity?.length===2),'Service FAQ schema missing: '+urlPath);
+   }
    if(urlPath.includes('/blog/')&&!['/blog/','/de/blog/'].includes(urlPath)){
     articles++;
     check(nodes.some(x=>x['@type']==='BlogPosting'),'BlogPosting missing: '+urlPath);
    }
   }catch(e){check(false,'Invalid JSON-LD: '+urlPath+' '+e.message)}
+ }
+ const detailService=german?deServices.find(x=>urlPath==='/de/angebote/'+x.slug+'/'):services.find(x=>urlPath==='/hizmetler/'+x.slug+'/');
+ if(detailService){
+  servicePages++;
+  const expanded=expandedServiceCopy[german?detailService.tr:detailService.slug][german?'de':'tr'];
+  check(html.includes(expanded.headline),'Missing service heading: '+urlPath);
+  check(html.includes('service-deep-prompt-grid'),'Missing service prompt grid: '+urlPath);
+  check(html.includes('service-deep-related-grid'),'Missing related services: '+urlPath);
+  check((html.match(/class="service-deep-prompt"/g)||[]).length===3,'Wrong service prompts: '+urlPath);
+  check((html.match(/<details>/g)||[]).length===2,'Wrong detail FAQ count: '+urlPath);
  }
  for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){
   const href=m[1].replaceAll('&amp;','&');
@@ -68,6 +96,7 @@ for(const urlPath of paths){
 }
 check(tested===54,'Not all pages generated');
 check(articles===16,'Expected 16 blog articles');
+check(servicePages===26,'Expected 26 expanded service pages');
 for(const file of ['robots.txt','sitemap.xml','llms.txt','llms-full.txt','llms-tr.txt','llms-de.txt','ai-catalog.json','.well-known/ard.json','.well-known/ai-catalog.json','_headers']){
  check(fs.existsSync(path.join(dist,file)),'Missing asset: '+file);
 }
@@ -83,5 +112,5 @@ for(const lang of ['tr','de']){
  }
 }
 check(read(path.join(dist,'_headers')).includes('Content-Security-Policy:'),'CSP missing');
-console.log(JSON.stringify({generatedPages:tested,blogArticles:articles,linksChecked:links,failures:failures.length},null,2));
+console.log(JSON.stringify({generatedPages:tested,blogArticles:articles,servicePages,linksChecked:links,failures:failures.length},null,2));
 if(failures.length){console.error(failures.slice(0,50).join('\n'));process.exitCode=1}
