@@ -4,7 +4,13 @@ import {mkdir,writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
 const W=1200,H=630,out='public/og';
 await mkdir(out,{recursive:true});
-const photo=await sharp('public/nese-alkaya-portrait-2x.webp').rotate().resize(820,H,{fit:'cover',position:'north'}).jpeg({quality:89}).toBuffer();
+const src='public/nese-alkaya-portrait-2x.webp';
+const input=sharp(src).rotate();
+const dimensions=await input.metadata();
+const cropHeight=Math.min(dimensions.height,Math.round(dimensions.width*H/820));
+const cropTop=Math.max(0,Math.min(dimensions.height-cropHeight,Math.round(dimensions.height*0.18)));
+// Frame the face rather than the top of the original tall portrait.
+const photo=await sharp(src).rotate().extract({left:0,top:cropTop,width:dimensions.width,height:cropHeight}).resize(820,H).jpeg({quality:89}).toBuffer();
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const cards=[
  {lang:'tr',name:'nese-alkaya-portre-tr.jpg',topic:'FARKINDALIK  ·  REHBERLİK  ·  DÖNÜŞÜM',lines:['Kendine doğru','bir yolculuk.'],desc:['Kendi yolunuza daha net','bakabileceğiniz bir alan.'],footer:'KİŞİSEL YOL ARKADAŞLIĞI'},
