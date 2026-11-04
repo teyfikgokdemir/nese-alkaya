@@ -17,11 +17,7 @@
     "@type": "ContactPoint",
     "telephone": "+49 174 154 3720",
     "email": "info@nesealkaya.com",
-    "contactType": "consultation inquiry",
-    "availableLanguage": [
-      "Turkish",
-      "German"
-    ]
+    "contactType": "consultation inquiry"
   },
   "languages": {
     "tr-TR": "https://nesealkaya.com/",
@@ -212,56 +208,160 @@
   "services": {
     "coaching": [
       {
+        "title": {
+          "tr": "1:1 Yaşam Koçluğu",
+          "de": "Persönliches Coaching"
+        },
+        "description": {
+          "tr": "Hayatınızdaki bir konuyu netleştirmek ve daha sakin bir bakışla ilerlemek için bireysel görüşmeler.",
+          "de": "Raum für Ihre Fragen, Gedanken und nächsten Schritte – in einem vertraulichen Einzelgespräch."
+        },
         "tr": "https://nesealkaya.com/hizmetler/yasam-koclugu/",
         "de": "https://nesealkaya.com/de/angebote/einzelcoaching/"
       },
       {
+        "title": {
+          "tr": "Yön Bulma & Karar Netliği",
+          "de": "Orientierung & Entscheidungen"
+        },
+        "description": {
+          "tr": "Seçenekler arasında sıkıştığınızda önceliklerinize, sınırlarınıza ve bir sonraki adıma odaklanın.",
+          "de": "Wenn mehrere Möglichkeiten offenstehen, können klare Fragen dabei helfen, Prioritäten zu erkennen."
+        },
         "tr": "https://nesealkaya.com/hizmetler/yon-bulma-karar-netligi/",
         "de": "https://nesealkaya.com/de/angebote/orientierung-und-entscheidungen/"
       },
       {
+        "title": {
+          "tr": "Stres, Kaygı & Duygusal Denge",
+          "de": "Stress & innere Balance"
+        },
+        "description": {
+          "tr": "Günlük baskı ve zihinsel karmaşa karşısında daha dengeli bir yaşam ritmi oluşturmak.",
+          "de": "Für mehr Überblick in belastenden Phasen und einen bewussteren Umgang mit dem eigenen Alltag."
+        },
         "tr": "https://nesealkaya.com/hizmetler/stres-kaygi-duygusal-denge/",
         "de": "https://nesealkaya.com/de/angebote/stress-und-innere-balance/"
       },
       {
+        "title": {
+          "tr": "Özgüven, Sınırlar & İlişkiler",
+          "de": "Selbstvertrauen, Grenzen & Beziehungen"
+        },
+        "description": {
+          "tr": "Kendinizi daha iyi ifade etmek ve ilişkilerde kendi sınırlarınızı fark etmek.",
+          "de": "Die eigene Stimme stärken, Bedürfnisse ernst nehmen und Beziehungen bewusster gestalten."
+        },
         "tr": "https://nesealkaya.com/hizmetler/ozguven-sinirlar-iliskiler/",
         "de": "https://nesealkaya.com/de/angebote/selbstvertrauen-grenzen-beziehungen/"
       },
       {
+        "title": {
+          "tr": "Kişisel Dönüşüm & Yeni Başlangıçlar",
+          "de": "Veränderung & Neuanfang"
+        },
+        "description": {
+          "tr": "Alışkanlıklarınızı ve hedeflerinizi gözden geçirerek yeni bir başlangıca hazırlanmak.",
+          "de": "Neue Lebensabschnitte mit Klarheit, Geduld und machbaren Schritten gestalten."
+        },
         "tr": "https://nesealkaya.com/hizmetler/kisisel-donusum-yeni-baslangiclar/",
         "de": "https://nesealkaya.com/de/angebote/veraenderung-und-neuanfang/"
       },
       {
+        "title": {
+          "tr": "Ruhsal Rehberlik & İçsel Farkındalık",
+          "de": "Spirituelle Begleitung & Achtsamkeit"
+        },
+        "description": {
+          "tr": "İnanç ve maneviyatla uyumlu, saygılı bir çerçevede içsel farkındalık geliştirmek.",
+          "de": "Ein respektvoller Gesprächsraum für Sinnfragen, innere Wahrnehmung und persönliche Werte."
+        },
         "tr": "https://nesealkaya.com/hizmetler/ruhsal-rehberlik-icsel-farkindalik/",
         "de": "https://nesealkaya.com/de/angebote/spirituelle-begleitung-und-achtsamkeit/"
       },
       {
+        "title": {
+          "tr": "Kısa Süreli Destek (Odak Seansı)",
+          "de": "Fokussitzung"
+        },
+        "description": {
+          "tr": "Tek bir konuya odaklanarak düşüncelerinizi toparlamak ve sonraki adımı görmek.",
+          "de": "Ein konzentriertes Gespräch zu einer konkreten Frage oder Entscheidung."
+        },
         "tr": "https://nesealkaya.com/hizmetler/kisa-sureli-destek-odak-seansi/",
         "de": "https://nesealkaya.com/de/angebote/fokussitzung/"
       },
       {
+        "title": {
+          "tr": "Süreçli Yol Arkadaşlığı",
+          "de": "Begleitung über mehrere Termine"
+        },
+        "description": {
+          "tr": "Düzenli görüşmelerle hedeflerinizi takip etmek ve değişim yolculuğunuzu yapılandırmak.",
+          "de": "Veränderungen in mehreren Gesprächen verfolgen und Entwicklungen bewusst reflektieren."
+        },
         "tr": "https://nesealkaya.com/hizmetler/surecli-yol-arkadasligi/",
         "de": "https://nesealkaya.com/de/angebote/begleitung-ueber-mehrere-termine/"
       }
     ],
     "spiritual": [
       {
+        "title": {
+          "tr": "Duru Görü",
+          "de": "Intuitive Wahrnehmung"
+        },
+        "description": {
+          "tr": "Sezgisel içgörü ve yorumlar üzerine manevi bir görüşme.",
+          "de": "Ein spirituelles Gespräch über persönliche Fragen und intuitive Deutungen."
+        },
         "tr": "https://nesealkaya.com/hizmetler/duru-goru/",
         "de": "https://nesealkaya.com/de/angebote/intuitive-wahrnehmung/"
       },
       {
+        "title": {
+          "tr": "Rüya Yorumlama",
+          "de": "Traumdeutung"
+        },
+        "description": {
+          "tr": "Rüyaların sembolik dilini geleneksel yorumlar üzerinden keşfedin.",
+          "de": "Bilder und Symbole aus Träumen im persönlichen und kulturellen Zusammenhang betrachten."
+        },
         "tr": "https://nesealkaya.com/hizmetler/ruya-yorumlama/",
         "de": "https://nesealkaya.com/de/angebote/traumdeutung/"
       },
       {
+        "title": {
+          "tr": "Tuz Bakımı",
+          "de": "Traditionelle Salzdeutung"
+        },
+        "description": {
+          "tr": "Geleneksel ve sembolik yorumlama pratiği.",
+          "de": "Eine überlieferte symbolische Praxis als Anlass für ein persönliches Gespräch."
+        },
         "tr": "https://nesealkaya.com/hizmetler/tuz-bakimi/",
         "de": "https://nesealkaya.com/de/angebote/salzdeutung/"
       },
       {
+        "title": {
+          "tr": "Yıldızname",
+          "de": "Traditionelle Sterndeutung"
+        },
+        "description": {
+          "tr": "Geleneksel yıldızname yorumlarının manevi dünyası.",
+          "de": "Überlieferte Sternen- und Symboldeutungen aus kultureller und spiritueller Sicht."
+        },
         "tr": "https://nesealkaya.com/hizmetler/yildizname/",
         "de": "https://nesealkaya.com/de/angebote/traditionelle-sterndeutung/"
       },
       {
+        "title": {
+          "tr": "Bioenerji & Reiki",
+          "de": "Reiki & Energiearbeit"
+        },
+        "description": {
+          "tr": "Kapsamı ve sınırları görüşmede netleştirilen manevi uygulamalar.",
+          "de": "Informationen zu spirituellen Anwendungen, deren Ablauf und persönlichen Grenzen."
+        },
         "tr": "https://nesealkaya.com/hizmetler/bioenerji-ve-reiki/",
         "de": "https://nesealkaya.com/de/angebote/reiki-und-energiearbeit/"
       }
