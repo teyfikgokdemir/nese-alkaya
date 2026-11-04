@@ -6,7 +6,7 @@ const {service}=Astro.props;
 const category=coaching.some(s=>s.slug===service.slug)?'Yaşam Koçluğu':'Manevi Rehberlik';
 const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent('Merhaba Neşe Hanım, '+service.title+' hakkında bilgi almak istiyorum.');
 ---
-<Base title={service.title} description={service.short} crumbs={[{name:'Ana Sayfa',href:'/'},{name:'Hizmetler',href:'/hizmetler/'},{name:service.title,href:Astro.url.pathname}]}>
+<Base service={service} title={service.title} description={service.short} crumbs={[{name:'Ana Sayfa',href:'/'},{name:'Hizmetler',href:'/hizmetler/'},{name:service.title,href:Astro.url.pathname}]}>
 <section class="detail-hero">
  <div class="shell detail-content-wrap">
   <a href="/hizmetler/" class="backlink">← Tüm hizmetler</a>

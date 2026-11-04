@@ -1,6 +1,6 @@
 export const site = {
   name: 'Neşe Alkaya',
-  url: 'https://nese-alkaya.pages.dev',
+  url: 'https://nesealkaya.com',
   phone: '491741543720',
   phoneDisplay: '+49 174 154 3720',
   email: 'info@nesealkaya.com',

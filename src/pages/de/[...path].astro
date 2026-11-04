@@ -1,0 +1,13 @@
+---
+import GermanPage from '../../components/GermanPage.astro';
+import {deServices} from '../../data/de.js';
+export function getStaticPaths(){return [
+{params:{path:'ueber-mich'},props:{kind:'about'}},
+{params:{path:'angebote'},props:{kind:'services'}},
+{params:{path:'einblicke'},props:{kind:'insights'}},
+{params:{path:'kontakt'},props:{kind:'contact'}},
+...deServices.map(service=>({params:{path:'angebote/'+service.slug},props:{kind:'detail',service}}))
+];}
+const {kind,service}=Astro.props;
+---
+<GermanPage kind={kind} service={service} />

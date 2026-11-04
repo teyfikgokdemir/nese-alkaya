@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import {topics,site} from '../data/content.js';
 ---
 <Base title="İçerikler & Videolar" description="Neşe Alkaya’nın yaşam, ilişkiler, farkındalık ve manevi rehberlik üzerine paylaşımlarını keşfedin.">
-<section class="page-hero"><div class="shell"><span class="overline">İçerikler</span><h1>Hayatın içinden<br/>düşünceler.</h1><p class="lead">İlişkiler, seçimler, farkındalık ve manevi yorumlama üzerine samimi paylaşımlar.</p></div></section>
+<section class="page-hero"><div class="shell"><span class="overline">İçerikler</span><h1>Hayatın içinden düşünceler.</h1><p class="lead">İlişkiler, seçimler, farkındalık ve manevi yorumlama üzerine samimi paylaşımlar.</p></div></section>
 <section class="section section-warm"><div class="shell"><div class="section-heading"><div><span class="overline">Öne çıkan temalar</span><h2 class="display-title">Birlikte düşünmeye değer.</h2></div><p>Gündelik hayatın içinden sorular ve kişisel farkındalık konuları.</p></div><div class="topic-columns">{topics.map(t=><article><span class="topic-rule" aria-hidden="true"></span><h3>{t.title}</h3><p>{t.text}</p></article>)}</div></div></section>
 <section class="section"><div class="shell editorial-text-grid"><div><span class="overline">Sosyal medya</span><h2 class="section-title">Sohbet, video ve yeni paylaşımlar.</h2></div><div class="prose"><p>Güncel videolarını ve içeriklerini resmi TikTok, Instagram ve YouTube hesaplarından takip edebilirsiniz.</p><div class="social-list">{site.socials.map(s=><a href={s.href} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div></div></div></section>
 </Base>
