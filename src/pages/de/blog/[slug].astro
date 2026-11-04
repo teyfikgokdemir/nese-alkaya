@@ -1,0 +1,7 @@
+---
+import BlogArticle from '../../../components/BlogArticle.astro';
+import {blogDE} from '../../../data/blog-de.js';
+export function getStaticPaths(){return blogDE.map(post=>({params:{slug:post.slug},props:{post}}));}
+const {post}=Astro.props;
+---
+<BlogArticle lang="de" post={post} />

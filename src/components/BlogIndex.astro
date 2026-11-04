@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import {blogTR} from '../data/blog-tr.js';
+import {blogDE} from '../data/blog-de.js';
+const {lang='tr'}=Astro.props;
+const de=lang==='de',posts=de?blogDE:blogTR,prefix=de?'/de/blog/':'/blog/';
+---
+<Base lang={lang} title={de?'Blog: Gedanken & Perspektiven':'Blog: Düşünceler & Rehberler'} description={de?'Acht ausführliche Beiträge zu Coaching, Beziehungen, Entscheidungen und spirituellen Traditionen.':'Neşe Alkaya: yaşam koçluğu, karar verme, ilişkiler, farkındalık ve manevi gelenekler üzerine sekiz kapsamlı makale.'} crumbs={[{name:de?'Startseite':'Ana Sayfa',href:de?'/de/':'/'},{name:'Blog',href:prefix}]}>
+<section class="blog-index-hero"><div class="shell blog-index-intro">
+ <span class="overline">{de?'LEBEN · ACHTSAMKEIT · PERSPEKTIVEN':'YAŞAM · FARKINDALIK · BAKIŞ AÇILARI'}</span>
+ <h1>{de?'Gedanken, die begleiten.':'Hayata başka bir yerden bakın.'}</h1>
+ <p>{de?'Geschichten, Fragen und fundierte Perspektiven zum Innehalten. Acht ausführliche Beiträge, die Raum für die eigene Sichtweise lassen.':'Kimi zaman yeni bir cevap değil, daha iyi bir soru gerekir. İlişkilerden kararlara, kişisel farkındalıktan manevi geleneğe uzanan sekiz derinlikli yazı.'}</p>
+ <div class="blog-index-accent" aria-hidden="true"></div>
+ </div></section>
+<section class="blog-directory section-space"><div class="shell">
+ <div class="blog-collection-heading"><span class="overline">{de?'AUSGEWÄHLTE ARTIKEL':'SEÇİLMİŞ YAZILAR'}</span><p>{de?'Acht Themen · In Ruhe lesen':'Sekiz konu · Kendinize zaman ayırın'}</p></div>
+ <div class="blog-card-grid">{posts.map((post,i)=><a class:list={['blog-card',{'blog-card-featured':i===0}]} href={prefix+post.slug+'/'} aria-label={post.title}>
+ <div class="blog-card-top"><span class="overline">{post.category}</span><span aria-hidden="true" class="blog-card-arrow">↗</span></div>
+ <h2>{post.title}</h2><p>{post.excerpt}</p>
+ <div class="blog-card-bottom"><span>{de?'Leben & Reflexion':'Yaşam & Farkındalık'}</span><span>{de?'Artikel lesen':'Yazıyı oku'} <span aria-hidden="true">↗</span></span></div>
+ </a>)}</div>
+ <div class="blog-directory-note"><span aria-hidden="true">✦</span><p>{de?'Die Texte dienen der allgemeinen Information und Reflexion. Coaching ist keine Psychotherapie; spirituelle Deutungen ersetzen keine medizinische Behandlung.':'Yazılar genel bilgilendirme ve kişisel farkındalık amaçlıdır. Yaşam koçluğu psikoterapi değildir; manevi yorumlar tedavi ya da kesin gelecek bilgisi sunmaz.'}</p></div>
+ </div></section>
+</Base>

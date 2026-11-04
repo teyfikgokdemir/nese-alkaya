@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import {blogTR} from '../data/blog-tr.js';
+import {blogDE} from '../data/blog-de.js';
+import {coaching,spiritual} from '../data/content.js';
+import {deServices} from '../data/de.js';
+const {post,lang='tr'}=Astro.props;
+const de=lang==='de',all=de?blogDE:blogTR,prefix=de?'/de/blog/':'/blog/';
+const services=de?deServices:[...coaching,...spiritual];
+const service=services.find(s=>s.slug===post.service);
+const serviceHref=service?(de?'/de/angebote/':'/hizmetler/')+service.slug+'/':de?'/de/angebote/':'/hizmetler/';
+const wordCount=(post.intro+' '+post.sections.flatMap(s=>s.paragraphs).join(' ')).trim().split(/\s+/u).length;
+const readingMinutes=Math.max(3,Math.ceil(wordCount/180));
+const recs=all.filter(p=>p.slug!==post.slug).slice(0,3);
+const crumbs=[{name:de?'Startseite':'Ana Sayfa',href:de?'/de/':'/'},{name:'Blog',href:prefix},{name:post.title,href:prefix+post.slug+'/'}];
+const anchors=post.sections.map((s,i)=>({id:'bolum-'+(i+1),title:s.heading}));
+---
+<Base lang={lang} title={post.title} description={post.excerpt} crumbs={crumbs} article={post}>
+<article class="blog-article" itemscope itemtype="https://schema.org/BlogPosting">
+<header class="blog-article-hero"><div class="shell blog-article-intro">
+ <a class="blog-back-link" href={prefix}>← {de?'Alle Artikel':'Tüm blog yazıları'}</a>
+ <div class="blog-article-kicker"><span class="overline">{post.category}</span><span aria-hidden="true">✦</span><span>{de?'Neşe Alkaya · Journal':'Neşe Alkaya · Blog'}</span></div>
+ <h1 itemprop="headline">{post.title}</h1>
+ <p class="blog-article-deck" itemprop="description">{post.excerpt}</p>
+ <div class="blog-reading-meta"><span>{de?'Ausführlicher Artikel':'Kapsamlı makale'}</span><span aria-hidden="true">·</span><span>{de?readingMinutes+' Min. Lesezeit':readingMinutes+' dk. okuma'}</span></div>
+ </div></header>
+ <div class="blog-article-body shell">
+  <aside class="blog-article-sidebar" aria-label={de?'Inhalt':'İçindekiler'}>
+   <div class="blog-toc"><span class="overline">{de?'IN DIESEM ARTIKEL':'BU YAZIDA'}</span><nav aria-label={de?'Abschnitte':'Yazı bölümleri'}>{anchors.map(a=><a href={'#'+a.id}>{a.title}</a>)}</nav></div>
+  </aside>
+  <div class="blog-article-main">
+   <p class="blog-lead" itemprop="articleBody">{post.intro}</p>
+   {post.sections.map((s,i)=><section id={'bolum-'+(i+1)} class="blog-prose-section"><h2>{s.heading}</h2>{s.paragraphs.map(p=><p>{p}</p>)}</section>)}
+   <div class="blog-article-end-mark" aria-hidden="true">✦</div>
+   <div class="blog-article-related-service"><div><span class="overline">{de?'PASSENDES ANGEBOT':'İLGİLİ HİZMET'}</span><h2>{de?'Ein Gespräch kann neue Fragen öffnen.':'Bazen bir sohbet yeni bir kapı açar.'}</h2><p>{de?'Wenn Sie ein persönliches Anliegen vertiefen möchten, finden Sie hier den thematisch passenden Gesprächsrahmen.':'Bu konuyu kendi yaşamınız açısından daha yakından düşünmek isterseniz, ilgili görüşme alanını keşfedebilirsiniz.'}</p></div><a class="button button-gold" href={serviceHref}>{de?'Angebot ansehen':'Hizmeti keşfet'} ↗</a></div>
+  </div>
+ </div>
+</article>
+<section class="blog-more section-space section-warm"><div class="shell"><div class="section-heading"><div><span class="overline">{de?'WEITERLESEN':'OKUMAYA DEVAM'}</span><h2 class="display-title">{de?'Weitere Perspektiven.':'Yeni bakış açıları.'}</h2></div><p>{de?'Drei weitere Themen für Ihren eigenen Weg.':'Kendi yolculuğunuz için üç farklı konu daha.'}</p></div><div class="blog-card-grid blog-more-grid">{recs.map(p=><a class="blog-card" href={prefix+p.slug+'/'}><div class="blog-card-top"><span class="overline">{p.category}</span><span aria-hidden="true">↗</span></div><h3>{p.title}</h3><p>{p.excerpt}</p><div class="blog-card-bottom"><span>{de?'Weiterlesen ↗':'Yazıyı oku ↗'}</span></div></a>)}</div></div></section>
+</Base>
