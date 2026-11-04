@@ -82,5 +82,11 @@ const graph=[
 const btn=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-nav');
 btn?.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));btn.setAttribute('aria-label',open?(document.documentElement.lang==='de'?'Menü öffnen':'Menüyü aç'):(document.documentElement.lang==='de'?'Menü schließen':'Menüyü kapat'));nav?.classList.toggle('open',!open)});
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');btn?.setAttribute('aria-expanded','false')}));
+if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+ const blocks=document.querySelectorAll('.section-heading,.page-hero .shell,.inner-hero .shell,.detail-hero .detail-content-wrap,.editorial-card,.spiritual-card,.service-catalog-item,.topic-columns article,.contact-page-grid,.social-feature-section .editorial-text-grid,.about-feature,.about-lead-grid');
+ const observer=new IntersectionObserver((entries)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-in-view');observer.unobserve(entry.target)}}},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
+ blocks.forEach(el=>{el.classList.add('reveal-on-scroll');observer.observe(el)});
+ document.body.classList.add('motion-ready');
+}
 </script>
 </body></html>
