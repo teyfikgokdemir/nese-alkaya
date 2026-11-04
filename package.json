@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "astro build && npm run verify",
+    "preview": "astro preview",
+    "verify": "node scripts/verify-build.mjs"
   },
   "dependencies": {
     "astro": "^5.16.0"
