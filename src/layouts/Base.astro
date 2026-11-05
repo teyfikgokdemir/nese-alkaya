@@ -72,45 +72,42 @@ const graph=[
 <a href={isDe?'/de/':'/'} class="brand" aria-label={isDe?'Neşe Alkaya Startseite':'Neşe Alkaya ana sayfa'}>NEŞE <span>ALKAYA</span><small>{isDe?'Achtsamkeit · Begleitung · Wandel':'Farkındalık · Rehberlik · Dönüşüm'}</small></a>
 <nav aria-label={isDe?'Hauptmenü':'Ana menü'} id="main-nav">
 {nav.map((n: any) => n.isDropdown ? (
-  <div class="nav-item-dropdown">
+  <div class="nav-dropdown-item">
     <div class="nav-dropdown-trigger">
-      <a href={n.href} class="nav-link-dropdown" aria-current={path.startsWith(n.href)?'page':undefined} aria-haspopup="true">
+      <a href={n.href} class="nav-dropdown-link" aria-current={path.startsWith(n.href)?'page':undefined} aria-haspopup="true">
         {n.title}
-        <svg class="dropdown-icon" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg>
+        <svg class="dropdown-chevron" viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 1 3 3 3-3"/></svg>
       </a>
-      <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-label={isDe?'Angebote Untermenü umschalten':'Hizmetler alt menüsünü aç/kapat'}>
-        <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg>
+      <button type="button" class="mobile-sub-toggle" aria-expanded="false" aria-label={isDe?'Angebote Menü umschalten':'Hizmetler menüsünü aç/kapat'}>
+        <svg viewBox="0 0 8 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 1 3 3 3-3"/></svg>
       </button>
     </div>
-    <div class="mega-menu" role="menu" aria-label={isDe?'Angebote Übersicht':'Hizmetler Menüsü'}>
-      <div class="mega-menu-grid">
-        <div class="mega-menu-col">
-          <span class="mega-menu-heading">{isDe?'Persönliches Coaching':'Bireysel Koçluk & Farkındalık'}</span>
-          <div class="mega-menu-list">
+    <div class="dropdown-menu-compact" role="menu" aria-label={isDe?'Angebote Übersicht':'Hizmetler Menüsü'}>
+      <div class="dropdown-cols">
+        <div class="dropdown-col">
+          <span class="dropdown-col-title">{isDe?'Persönliches Coaching':'Bireysel Koçluk'}</span>
+          <div class="dropdown-list">
             {coachingItems.map((item: any) => (
-              <a href={(isDe?'/de/angebote/':'/hizmetler/')+item.slug+'/'} class="mega-menu-item" role="menuitem">
-                <span class="mega-menu-item-title">{item.title}</span>
-                <span class="mega-menu-item-desc">{item.short}</span>
+              <a href={(isDe?'/de/angebote/':'/hizmetler/')+item.slug+'/'} class="dropdown-link" role="menuitem">
+                {item.title}
               </a>
             ))}
           </div>
         </div>
-        <div class="mega-menu-col">
-          <span class="mega-menu-heading">{isDe?'Spirituelle Begleitung':'Ruhsal Rehberlik & Gelenek'}</span>
-          <div class="mega-menu-list">
+        <div class="dropdown-col">
+          <span class="dropdown-col-title">{isDe?'Spirituelle Begleitung':'Ruhsal Rehberlik'}</span>
+          <div class="dropdown-list">
             {spiritualItems.map((item: any) => (
-              <a href={(isDe?'/de/angebote/':'/hizmetler/')+item.slug+'/'} class="mega-menu-item" role="menuitem">
-                <span class="mega-menu-item-title">{item.title}</span>
-                <span class="mega-menu-item-desc">{item.short}</span>
+              <a href={(isDe?'/de/angebote/':'/hizmetler/')+item.slug+'/'} class="dropdown-link" role="menuitem">
+                {item.title}
               </a>
             ))}
           </div>
         </div>
       </div>
-      <div class="mega-menu-bar">
-        <a href={n.href} class="mega-menu-view-all">
-          <span>{isDe?'Alle 13 Angebote im Überblick':'Tüm 13 Hizmeti İnceleyin'}</span>
-          <span aria-hidden="true">→</span>
+      <div class="dropdown-footer">
+        <a href={n.href} class="dropdown-all-link">
+          <span>{isDe?'Alle 13 Angebote ↗':'Tüm 13 Hizmeti İnceleyin ↗'}</span>
         </a>
       </div>
     </div>
@@ -150,7 +147,7 @@ const graph=[
 const btn=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-nav');
 btn?.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));btn.setAttribute('aria-label',open?(document.documentElement.lang==='de'?'Menü öffnen':'Menüyü aç'):(document.documentElement.lang==='de'?'Menü schließen':'Menüyü kapat'));nav?.classList.toggle('open',!open)});
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');btn?.setAttribute('aria-expanded','false')}));
-const subToggle=document.querySelector('.mobile-submenu-toggle');const dropdownContainer=document.querySelector('.nav-item-dropdown');
+const subToggle=document.querySelector('.mobile-sub-toggle');const dropdownContainer=document.querySelector('.nav-dropdown-item');
 subToggle?.addEventListener('click',(e)=>{e.stopPropagation();const open=subToggle.getAttribute('aria-expanded')==='true';subToggle.setAttribute('aria-expanded',String(!open));dropdownContainer?.classList.toggle('is-open',!open)});
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){dropdownContainer?.classList.remove('is-open');subToggle?.setAttribute('aria-expanded','false')}});
 if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
