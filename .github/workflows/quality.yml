@@ -1,24 +1,46 @@
-name: Quality gate
+name: Quality Gate & Automated Verification
+
 on:
   pull_request:
     branches: [main]
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build-and-verify:
+  quality-gate:
+    name: Build, TypeCheck & Verify (54 Routes)
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22 with npm cache
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
-      - name: Build and verify
+          cache: 'npm'
+
+      - name: Install Clean Dependencies
+        run: npm ci --prefer-offline --no-fund
+
+      - name: Astro TypeScript Diagnostic Check
+        run: npm run check
+
+      - name: Static Build & Strict Verification
         run: npm run build
-      - name: Validate IndexNow readiness (offline)
+
+      - name: Offline IndexNow Protocol Validation
         run: npm run indexnow:check
+
+      - name: Dependency Security Audit
+        run: npm audit --audit-level=critical

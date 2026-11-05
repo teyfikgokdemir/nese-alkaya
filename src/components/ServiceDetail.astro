@@ -6,10 +6,10 @@ import {expandedServiceCopy} from '../data/service-expanded.js';
 const {service,lang='tr',isCoaching=false}=Astro.props;
 const isDe=lang==='de';
 const trSlug=isDe?service.tr:service.slug;
-const detail=expandedServiceCopy[trSlug]?.[lang];
+const detail=(expandedServiceCopy as Record<string, any>)[trSlug]?.[lang];
 if(!detail)throw new Error('Missing localized service detail: '+trSlug+' / '+lang);
 const group=isDe?(isCoaching?deCoaching:deSpiritual):(isCoaching?coaching:spiritual);
-const currentIndex=group.findIndex(item=>item.slug===service.slug);
+const currentIndex=group.findIndex((item: any)=>item.slug===service.slug);
 const related=[1,2].map(offset=>group[(currentIndex+offset)%group.length]).filter(Boolean);
 const prefix=isDe?'/de/angebote/':'/hizmetler/';
 const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent(isDe?'Guten Tag Frau Alkaya, ich interessiere mich für '+service.title+'. Können Sie mir Ablauf und Konditionen nennen?':'Merhaba Neşe Hanım, '+service.title+' hizmetinin kapsamı ve görüşme koşulları hakkında bilgi almak istiyorum.');
@@ -63,7 +63,7 @@ const t=isDe?{
     </div>
     <aside class="service-deep-aside" aria-label={t.topics}>
       <span class="overline">{t.topics}</span>
-      <ul>{service.topics.map(topic=><li>{topic}</li>)}</ul>
+      <ul>{service.topics.map((topic: any)=><li>{topic}</li>)}</ul>
     </aside>
   </div>
 </section>
@@ -75,7 +75,7 @@ const t=isDe?{
       <p>{t.questionsDesc}</p>
     </div>
     <div class="service-deep-prompt-grid">
-      {detail.situations.map(question=><div class="service-deep-prompt"><span aria-hidden="true" class="service-deep-prompt-mark"></span><p>{question}</p></div>)}
+      {detail.situations.map((question: any)=><div class="service-deep-prompt"><span aria-hidden="true" class="service-deep-prompt-mark"></span><p>{question}</p></div>)}
     </div>
   </div>
 </section>
@@ -96,7 +96,7 @@ const t=isDe?{
   <div class="shell">
     <span class="overline">{t.faqEyebrow}</span>
     <h2 id="service-faq-title">{t.faqTitle}</h2>
-    <div class="faq-list">{detail.faq.map(item=><details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div>
+    <div class="faq-list">{detail.faq.map((item: any)=><details><summary>{item.q}</summary><p>{item.a}</p></details>)}</div>
   </div>
 </section>
 <section class="service-deep-related" aria-labelledby="service-related-title">
@@ -104,7 +104,7 @@ const t=isDe?{
     <span class="overline">{t.relatedEyebrow}</span>
     <h2 id="service-related-title">{t.relatedTitle}</h2>
     <div class="service-deep-related-grid">
-      {related.map(item=><a href={prefix+item.slug+'/'} class="service-deep-related-link"><span>{item.title}</span><small>{t.relatedLink}</small></a>)}
+      {related.map((item: any)=><a href={prefix+item.slug+'/'} class="service-deep-related-link"><span>{item.title}</span><small>{t.relatedLink}</small></a>)}
     </div>
     <div class="final-banner service-deep-cta">
       <div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div>

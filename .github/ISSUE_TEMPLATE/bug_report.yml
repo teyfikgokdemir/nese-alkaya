@@ -1,0 +1,48 @@
+name: Bug Report
+description: Report a broken link, visual regression, schema error, or technical bug.
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping maintain the ultra-high standard of Neşe Alkaya Web Platform!
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL / Route
+      description: Provide the specific page URL (e.g., https://nesealkaya.com/hizmetler/yasam-koclugu/)
+      placeholder: /blog/... or /de/...
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this behavior?
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser / Device
+      options:
+        - Chrome / Chromium
+        - Safari / WebKit (iOS)
+        - Safari (macOS)
+        - Firefox (Gecko)
+        - Edge
+        - Other
+    validations:
+      required: true

@@ -6,7 +6,7 @@ import {expandedServiceCopy} from '../../data/service-expanded.js';
 export function getStaticPaths(){return services.map(service=>({params:{slug:service.slug},props:{service}}));}
 const {service}=Astro.props;
 const isCoaching=coaching.some(s=>s.slug===service.slug);
-const faqItems=expandedServiceCopy[service.slug].tr.faq;
+const faqItems=(expandedServiceCopy as Record<string, any>)[service.slug].tr.faq;
 ---
 <Base service={service} faqItems={faqItems} title={service.title} description={service.short} crumbs={[{name:'Ana Sayfa',href:'/'},{name:'Hizmetler',href:'/hizmetler/'},{name:service.title,href:Astro.url.pathname}]}>
   <ServiceDetail service={service} lang="tr" isCoaching={isCoaching} />

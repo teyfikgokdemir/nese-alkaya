@@ -1,0 +1,37 @@
+name: Content / Biography / Translation Update
+description: Request an update to biographical details, coaching services, or German translations.
+title: "[CONTENT]: "
+labels: ["content", "i18n"]
+body:
+  - type: markdown
+    attributes:
+      value: For changes to Neşe Alkaya's professional background, service offerings, or localized copy.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Target Language
+      options:
+        - Turkish (tr)
+        - German (de)
+        - Both (Dual Language Parity)
+    validations:
+      required: true
+  - type: textarea
+    id: current_text
+    attributes:
+      label: Current Text / Excerpt
+      description: The existing text you wish to update.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_text
+    attributes:
+      label: Proposed Replacement Text
+      description: The revised text adhering to tone and verification guidelines.
+    validations:
+      required: true
+  - type: textarea
+    id: justification
+    attributes:
+      label: Context / Verification Source
+      description: Notes on certification, source biography, or client approval.

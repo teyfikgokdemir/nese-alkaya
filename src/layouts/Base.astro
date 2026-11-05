@@ -1,6 +1,6 @@
 ---
 import {site} from '../data/content.js';
-import {dePathMap,trPathMap,deSiteDescription,deServices} from '../data/de.js';
+import {dePathMap,trPathMap} from '../data/de.js';
 import '../styles/global.css';
 import SocialLinks from '../components/SocialLinks.astro';
 const {title=site.name,description=site.description,path=Astro.url.pathname,crumbs=[],lang='tr',service=null,faqItems=[],article=null}=Astro.props;
@@ -8,7 +8,7 @@ const isDe=lang==='de';
 // Public and crawlable now; swap to the canonical host only once the custom domain is active.
 const ogImageUrl='https://nese-alkaya.pages.dev/og/nese-alkaya-portre-'+(isDe?'de':'tr')+'.jpg';
 const canonical=new URL(path,site.url).href;
-const localPath=isDe?(trPathMap[path]||'/'):(dePathMap[path]||'/de/');
+const localPath=isDe?((trPathMap as Record<string, string>)[path]||'/'):((dePathMap as Record<string, string>)[path]||'/de/');
 const alternate=new URL(localPath,site.url).href;
 const urlTR=isDe?alternate:canonical;
 const urlDE=isDe?canonical:alternate;
@@ -22,14 +22,14 @@ const displayTitle=title===site.name?site.name:title+' | '+site.name;
 const personId=site.url+'/#person';
 const websiteId=site.url+'/#website';
 const graph=[
- {'@type':'Person','@id':personId,name:site.name,url:site.url,description:site.description,image:new URL('/nese-alkaya-portrait-2x.webp',site.url).href,sameAs:site.socials.map(s=>s.href),knowsAbout:['Persönliches Coaching','Yaşam koçluğu','Manevi rehberlik','Spirituelle Begleitung']},
+ {'@type':'Person','@id':personId,name:site.name,url:site.url,description:site.description,image:new URL('/nese-alkaya-portrait-2x.webp',site.url).href,sameAs:site.socials.map((s: any)=>s.href),knowsAbout:['Persönliches Coaching','Yaşam koçluğu','Manevi rehberlik','Spirituelle Begleitung']},
  {'@type':'WebSite','@id':websiteId,url:site.url,name:site.name,inLanguage:['tr-TR','de-DE'],publisher:{'@id':personId}},
- {'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description,inLanguage:isDe?'de-DE':'tr-TR',isPartOf:{'@id':websiteId},about:{'@id':personId},primaryImageOfPage:{'@type':'ImageObject',url:new URL('/nese-alkaya-portrait-2x.webp',site.url).href},...(crumbs.length?{breadcrumb:{'@type':'BreadcrumbList',itemListElement:crumbs.map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,item:new URL(c.href,site.url).href}))}}:{})},
+ {'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description,inLanguage:isDe?'de-DE':'tr-TR',isPartOf:{'@id':websiteId},about:{'@id':personId},primaryImageOfPage:{'@type':'ImageObject',url:new URL('/nese-alkaya-portrait-2x.webp',site.url).href},...(crumbs.length?{breadcrumb:{'@type':'BreadcrumbList',itemListElement:crumbs.map((c: any,i: number)=>({'@type':'ListItem',position:i+1,name:c.name,item:new URL(c.href,site.url).href}))}}:{})},
  ...(service?[{'@type':'Service',name:service.title,description:service.short,provider:{'@id':personId},url:canonical,serviceType:isDe?'Persönliches Gespräch':'Bireysel görüşme'}]:[]),
- ...(faqItems.length?[{'@type':'FAQPage',mainEntity:faqItems.map(item=>({'@type':'Question',name:item.q,acceptedAnswer:{'@type':'Answer',text:item.a}}))}]:[]),
- ...(crumbs.length?[{'@type':'BreadcrumbList','@id':canonical+'#breadcrumb',itemListElement:crumbs.map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,item:new URL(c.href,site.url).href}))}]:[]),
+ ...(faqItems.length?[{'@type':'FAQPage',mainEntity:faqItems.map((item: any)=>({'@type':'Question',name:item.q,acceptedAnswer:{'@type':'Answer',text:item.a}}))}]:[]),
+ ...(crumbs.length?[{'@type':'BreadcrumbList','@id':canonical+'#breadcrumb',itemListElement:crumbs.map((c: any,i: number)=>({'@type':'ListItem',position:i+1,name:c.name,item:new URL(c.href,site.url).href}))}]:[]),
  ...(!article && ['/blog/','/de/blog/'].includes(path)?[{'@type':'Blog','@id':canonical+'#blog',name:isDe?'Neşe Alkaya – Blog & Gedanken':'Neşe Alkaya – Blog & Yazılar',url:canonical,inLanguage:isDe?'de-DE':'tr-TR',publisher:{'@id':personId}}]:[]),
- ...(article?[{'@type':'BlogPosting','@id':canonical+'#article',headline:article.title,description:article.excerpt,inLanguage:isDe?'de-DE':'tr-TR',datePublished:article.date,dateModified:article.date,mainEntityOfPage:{'@id':canonical+'#webpage'},author:{'@id':personId},publisher:{'@id':personId},articleSection:article.category,wordCount:article.wordCount||[article.intro,...article.sections.flatMap(s=>s.paragraphs)].join(' ').split(/\s+/u).length,about:article.category,isAccessibleForFree:true,url:canonical}]:[])
+ ...(article?[{'@type':'BlogPosting','@id':canonical+'#article',headline:article.title,description:article.excerpt,inLanguage:isDe?'de-DE':'tr-TR',datePublished:article.date,dateModified:article.date,mainEntityOfPage:{'@id':canonical+'#webpage'},author:{'@id':personId},publisher:{'@id':personId},articleSection:article.category,wordCount:article.wordCount||[article.intro,...article.sections.flatMap((s: any)=>s.paragraphs)].join(' ').split(/\s+/u).length,about:article.category,isAccessibleForFree:true,url:canonical}]:[])
 ];
 ---
 <!doctype html>
