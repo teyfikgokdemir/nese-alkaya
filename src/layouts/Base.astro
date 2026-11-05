@@ -1,6 +1,6 @@
 ---
-import {site} from '../data/content.js';
-import {dePathMap,trPathMap} from '../data/de.js';
+import {site,coaching,spiritual} from '../data/content.js';
+import {dePathMap,trPathMap,deCoaching,deSpiritual} from '../data/de.js';
 import '../styles/global.css';
 import SocialLinks from '../components/SocialLinks.astro';
 const {title=site.name,description=site.description,path=Astro.url.pathname,crumbs=[],lang='tr',service=null,faqItems=[],article=null}=Astro.props;
@@ -13,10 +13,10 @@ const alternate=new URL(localPath,site.url).href;
 const urlTR=isDe?alternate:canonical;
 const urlDE=isDe?canonical:alternate;
 const wa='https://wa.me/'+site.phone+'?text='+encodeURIComponent(isDe?'Guten Tag Frau Alkaya, ich möchte mich über ein Gespräch informieren.':'Merhaba Neşe Hanım, web siteniz üzerinden görüşme hakkında bilgi almak istiyorum.');
-const nav=isDe?[
- {title:'Startseite',href:'/de/'},{title:'Über mich',href:'/de/ueber-mich/'},{title:'Angebote',href:'/de/angebote/'},{title:'Einblicke',href:'/de/einblicke/'},{title:'Blog',href:'/de/blog/'},{title:'Kontakt',href:'/de/kontakt/'}
+const coachingItems=isDe?deCoaching:coaching;const spiritualItems=isDe?deSpiritual:spiritual;const nav=isDe?[
+ {title:'Startseite',href:'/de/'},{title:'Über mich',href:'/de/ueber-mich/'},{title:'Angebote',href:'/de/angebote/',isDropdown:true},{title:'Einblicke',href:'/de/einblicke/'},{title:'Blog',href:'/de/blog/'},{title:'Kontakt',href:'/de/kontakt/'}
 ]:[
- {title:'Ana Sayfa',href:'/'},{title:'Hakkımda',href:'/hakkimda/'},{title:'Hizmetler',href:'/hizmetler/'},{title:'İçerikler',href:'/icerikler/'},{title:'Blog',href:'/blog/'},{title:'İletişim',href:'/iletisim/'}
+ {title:'Ana Sayfa',href:'/'},{title:'Hakkımda',href:'/hakkimda/'},{title:'Hizmetler',href:'/hizmetler/',isDropdown:true},{title:'İçerikler',href:'/icerikler/'},{title:'Blog',href:'/blog/'},{title:'İletişim',href:'/iletisim/'}
 ];
 const displayTitle=title===site.name?site.name:title+' | '+site.name;
 const personId=site.url+'/#person';
@@ -71,7 +71,53 @@ const graph=[
 <header class="site-header"><div class="shell nav-wrap">
 <a href={isDe?'/de/':'/'} class="brand" aria-label={isDe?'Neşe Alkaya Startseite':'Neşe Alkaya ana sayfa'}>NEŞE <span>ALKAYA</span><small>{isDe?'Achtsamkeit · Begleitung · Wandel':'Farkındalık · Rehberlik · Dönüşüm'}</small></a>
 <nav aria-label={isDe?'Hauptmenü':'Ana menü'} id="main-nav">
-{nav.map(n=><a href={n.href} aria-current={path===n.href || (n.href.endsWith('/angebote/')||n.href.endsWith('/hizmetler/'))&&path.startsWith(n.href)?'page':undefined}>{n.title}</a>)}
+{nav.map((n: any) => n.isDropdown ? (
+  <div class="nav-item-dropdown">
+    <div class="nav-dropdown-trigger">
+      <a href={n.href} class="nav-link-dropdown" aria-current={path.startsWith(n.href)?'page':undefined} aria-haspopup="true">
+        {n.title}
+        <svg class="dropdown-icon" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg>
+      </a>
+      <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-label={isDe?'Angebote Untermenü umschalten':'Hizmetler alt menüsünü aç/kapat'}>
+        <svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg>
+      </button>
+    </div>
+    <div class="mega-menu" role="menu" aria-label={isDe?'Angebote Übersicht':'Hizmetler Menüsü'}>
+      <div class="mega-menu-grid">
+        <div class="mega-menu-col">
+          <span class="mega-menu-heading">{isDe?'Persönliches Coaching':'Bireysel Koçluk & Farkındalık'}</span>
+          <div class="mega-menu-list">
+            {coachingItems.map((item: any) => (
+              <a href={(isDe?'/de/angebote/':'/hizmetler/')+item.slug+'/'} class="mega-menu-item" role="menuitem">
+                <span class="mega-menu-item-title">{item.title}</span>
+                <span class="mega-menu-item-desc">{item.short}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="mega-menu-col">
+          <span class="mega-menu-heading">{isDe?'Spirituelle Begleitung':'Ruhsal Rehberlik & Gelenek'}</span>
+          <div class="mega-menu-list">
+            {spiritualItems.map((item: any) => (
+              <a href={(isDe?'/de/angebote/':'/hizmetler/')+item.slug+'/'} class="mega-menu-item" role="menuitem">
+                <span class="mega-menu-item-title">{item.title}</span>
+                <span class="mega-menu-item-desc">{item.short}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="mega-menu-bar">
+        <a href={n.href} class="mega-menu-view-all">
+          <span>{isDe?'Alle 13 Angebote im Überblick':'Tüm 13 Hizmeti İnceleyin'}</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+) : (
+  <a href={n.href} aria-current={path===n.href?'page':undefined}>{n.title}</a>
+))}
 </nav>
 <div class="lang-switch" role="group" aria-label={isDe?'Sprache wählen':'Dil seçimi'}>
 <a href={urlTR.replace(site.url,'')} hreflang="tr" lang="tr" aria-current={!isDe?'page':undefined}>TR</a>
@@ -104,6 +150,9 @@ const graph=[
 const btn=document.querySelector('.menu-toggle');const nav=document.querySelector('#main-nav');
 btn?.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!open));btn.setAttribute('aria-label',open?(document.documentElement.lang==='de'?'Menü öffnen':'Menüyü aç'):(document.documentElement.lang==='de'?'Menü schließen':'Menüyü kapat'));nav?.classList.toggle('open',!open)});
 nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav?.classList.remove('open');btn?.setAttribute('aria-expanded','false')}));
+const subToggle=document.querySelector('.mobile-submenu-toggle');const dropdownContainer=document.querySelector('.nav-item-dropdown');
+subToggle?.addEventListener('click',(e)=>{e.stopPropagation();const open=subToggle.getAttribute('aria-expanded')==='true';subToggle.setAttribute('aria-expanded',String(!open));dropdownContainer?.classList.toggle('is-open',!open)});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){dropdownContainer?.classList.remove('is-open');subToggle?.setAttribute('aria-expanded','false')}});
 if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
  const blocks=document.querySelectorAll('.section-heading,.page-hero .shell,.inner-hero .shell,.detail-hero .detail-content-wrap,.editorial-card,.spiritual-card,.service-catalog-item,.topic-columns article,.contact-page-grid,.social-feature-section .editorial-text-grid,.about-feature,.about-lead-grid');
  const observer=new IntersectionObserver((entries)=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-in-view');observer.unobserve(entry.target)}}},{threshold:.08,rootMargin:'0px 0px -20px 0px'});
